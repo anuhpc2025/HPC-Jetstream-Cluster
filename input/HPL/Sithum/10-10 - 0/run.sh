@@ -6,6 +6,8 @@
 #SBATCH --time=00:10:00           # Time limit hh:mm:ss
 #SBATCH --nodes=3                 # Number of nodes
 
+source /etc/profile.d/openmpi.sh
+
 # Ulimits
 ulimit -l unlimited
 ulimit -n 65536
