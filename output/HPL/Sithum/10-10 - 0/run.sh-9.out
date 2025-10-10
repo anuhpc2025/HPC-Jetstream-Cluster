@@ -1,0 +1,6 @@
+/bin/mpirun
+PATH
+LD_LIBRARY_PATH
+/usr/bin/mpirun
+PATH
+LD_LIBRARY_PATH
