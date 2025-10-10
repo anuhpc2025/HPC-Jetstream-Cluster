@@ -87,7 +87,7 @@
   },
   "job": {
     "filename": "run.sh",
-    "raw": "#!/bin/bash\n#SBATCH --job-name=hpl-test       # Job name\n#SBATCH --ntasks=192              # Total MPI tasks\n#SBATCH --ntasks-per-node=64       # MPI tasks per node\n#SBATCH --cpus-per-task=1         # CPU cores per MPI task\n#SBATCH --time=00:10:00           # Time limit hh:mm:ss\n#SBATCH --nodes=3                 # Number of nodes\n\nsource /etc/profile.d/openmpi.sh\n\n# Ulimits\nulimit -l unlimited\nulimit -n 65536\n\n# Run the MPI program\nmpirun ./xhpl",
+    "raw": "#!/bin/bash\n#SBATCH --job-name=hpl-test       # Job name\n#SBATCH --ntasks=192              # Total MPI tasks\n#SBATCH --ntasks-per-node=64       # MPI tasks per node\n#SBATCH --cpus-per-task=1         # CPU cores per MPI task\n#SBATCH --time=00:10:00           # Time limit hh:mm:ss\n#SBATCH --nodes=3                 # Number of nodes\n\nsource /etc/profile.d/openmpi.sh\n\n# Ulimits\nulimit -l unlimited\nulimit -n 65536\n\n# Run the MPI program\nsrun ./xhpl",
     "sbatch": {
       "job-name": "hpl-test       # Job name",
       "ntasks": null,
@@ -100,8 +100,8 @@
   },
   "out": null,
   "err": {
-    "path": "/raw/HPL/Sithum/10-10 - 0/run.sh-5.err",
-    "size": 611
+    "path": "/raw/HPL/Sithum/10-10 - 0/run.sh-6.err",
+    "size": 74
   },
   "best": null
 }
