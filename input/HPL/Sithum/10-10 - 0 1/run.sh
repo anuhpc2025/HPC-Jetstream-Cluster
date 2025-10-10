@@ -6,20 +6,23 @@
 #SBATCH --time=00:10:00           # Time limit hh:mm:ss
 #SBATCH --nodes=3                 # Number of nodes
 
+hostname
 which srun
 which mpirun
+echo "PATH is: $PATH"
+ls -l /bin/srun
+env | grep -E "SLURM|PATH"
 
-echo PATH
-echo LD_LIBRARY_PATH
-
+echo "TESTTESTTEST"
 export PATH=/opt/slurm/bin:/usr/bin:/bin:/opt/openmpi-4.1.6/bin:$PATH
 export LD_LIBRARY_PATH=/opt/openmpi-4.1.6/lib:$LD_LIBRARY_PATH
 
+hostname
 which srun
 which mpirun
-
-echo PATH
-echo LD_LIBRARY_PATH
+echo "PATH is: $PATH"
+ls -l /bin/srun
+env | grep -E "SLURM|PATH"
 
 # Ulimits
 ulimit -l unlimited
