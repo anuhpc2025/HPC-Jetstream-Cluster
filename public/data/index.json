@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-10-10T12:24:47.999Z",
+  "generatedAt": "2025-10-10T12:44:13.156Z",
   "runs": [
     {
       "id": "HPL/Sithum/10-10 - 0 1",
@@ -75,17 +75,37 @@
       "suite": "HPL",
       "group": "Sithum",
       "run": "10-10 - 2 1",
-      "best": null,
-      "outSummary": null,
-      "hasErr": false
+      "best": {
+        "gflops": 147.52,
+        "N": 10000,
+        "NB": 128,
+        "timeSec": 4.52
+      },
+      "outSummary": {
+        "testsTotal": 18,
+        "testsPassed": 18,
+        "testsFailed": 0,
+        "testsSkipped": 0
+      },
+      "hasErr": true
     },
     {
       "id": "HPL/Sithum/10-10 - 2 2",
       "suite": "HPL",
       "group": "Sithum",
       "run": "10-10 - 2 2",
-      "best": null,
-      "outSummary": null,
+      "best": {
+        "gflops": 154.99,
+        "N": 10000,
+        "NB": 128,
+        "timeSec": 4.3
+      },
+      "outSummary": {
+        "testsTotal": 18,
+        "testsPassed": 18,
+        "testsFailed": 0,
+        "testsSkipped": 0
+      },
       "hasErr": false
     },
     {
@@ -93,18 +113,38 @@
       "suite": "HPL",
       "group": "Sithum",
       "run": "10-10 - 2 3",
-      "best": null,
-      "outSummary": null,
-      "hasErr": false
+      "best": {
+        "gflops": 154.42,
+        "N": 10000,
+        "NB": 128,
+        "timeSec": 4.32
+      },
+      "outSummary": {
+        "testsTotal": 18,
+        "testsPassed": 18,
+        "testsFailed": 0,
+        "testsSkipped": 0
+      },
+      "hasErr": true
     },
     {
       "id": "HPL/Sithum/10-10 - 2 4",
       "suite": "HPL",
       "group": "Sithum",
       "run": "10-10 - 2 4",
-      "best": null,
-      "outSummary": null,
-      "hasErr": false
+      "best": {
+        "gflops": 152.89,
+        "N": 10000,
+        "NB": 128,
+        "timeSec": 4.36
+      },
+      "outSummary": {
+        "testsTotal": 18,
+        "testsPassed": 18,
+        "testsFailed": 0,
+        "testsSkipped": 0
+      },
+      "hasErr": true
     }
   ]
 }
