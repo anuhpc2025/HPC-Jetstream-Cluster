@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-10-10T12:17:08.779Z",
+  "generatedAt": "2025-10-10T12:24:47.999Z",
   "runs": [
     {
       "id": "HPL/Sithum/10-10 - 0 1",
@@ -68,44 +68,24 @@
       "run": "10-10 - 2 0",
       "best": null,
       "outSummary": null,
-      "hasErr": true
+      "hasErr": false
     },
     {
       "id": "HPL/Sithum/10-10 - 2 1",
       "suite": "HPL",
       "group": "Sithum",
       "run": "10-10 - 2 1",
-      "best": {
-        "gflops": 163.67,
-        "N": 10000,
-        "NB": 128,
-        "timeSec": 4.07
-      },
-      "outSummary": {
-        "testsTotal": 18,
-        "testsPassed": 18,
-        "testsFailed": 0,
-        "testsSkipped": 0
-      },
-      "hasErr": true
+      "best": null,
+      "outSummary": null,
+      "hasErr": false
     },
     {
       "id": "HPL/Sithum/10-10 - 2 2",
       "suite": "HPL",
       "group": "Sithum",
       "run": "10-10 - 2 2",
-      "best": {
-        "gflops": 164.19,
-        "N": 10000,
-        "NB": 128,
-        "timeSec": 4.06
-      },
-      "outSummary": {
-        "testsTotal": 18,
-        "testsPassed": 18,
-        "testsFailed": 0,
-        "testsSkipped": 0
-      },
+      "best": null,
+      "outSummary": null,
       "hasErr": false
     },
     {
@@ -113,38 +93,18 @@
       "suite": "HPL",
       "group": "Sithum",
       "run": "10-10 - 2 3",
-      "best": {
-        "gflops": 159.31,
-        "N": 10000,
-        "NB": 128,
-        "timeSec": 4.19
-      },
-      "outSummary": {
-        "testsTotal": 18,
-        "testsPassed": 18,
-        "testsFailed": 0,
-        "testsSkipped": 0
-      },
-      "hasErr": true
+      "best": null,
+      "outSummary": null,
+      "hasErr": false
     },
     {
       "id": "HPL/Sithum/10-10 - 2 4",
       "suite": "HPL",
       "group": "Sithum",
       "run": "10-10 - 2 4",
-      "best": {
-        "gflops": 160.28,
-        "N": 10000,
-        "NB": 128,
-        "timeSec": 4.16
-      },
-      "outSummary": {
-        "testsTotal": 18,
-        "testsPassed": 18,
-        "testsFailed": 0,
-        "testsSkipped": 0
-      },
-      "hasErr": true
+      "best": null,
+      "outSummary": null,
+      "hasErr": false
     }
   ]
 }

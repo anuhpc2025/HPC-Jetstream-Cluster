@@ -99,9 +99,6 @@
     "path": "/raw/HPL/Sithum/10-10 - 2 0/run.sh"
   },
   "out": null,
-  "err": {
-    "path": "/raw/HPL/Sithum/10-10 - 2 0/run.sh-15.err",
-    "size": 11150
-  },
+  "err": null,
   "best": null
 }
