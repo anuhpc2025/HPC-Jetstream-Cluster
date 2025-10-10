@@ -1,0 +1,78 @@
+OMP_NUM_THREADS not set, auto-selected to use 1 threads per rank
+[anu-hpc-2025-cpu-cluster-1-of-3][[34097,1],54][btl_tcp_endpoint.c:625:mca_btl_tcp_endpoint_recv_connect_ack] received unexpected process identifier [[34097,1],49]
+[anu-hpc-2025-cpu-cluster-1-of-3][[34097,1],54][btl_tcp_endpoint.c:625:mca_btl_tcp_endpoint_recv_connect_ack] received unexpected process identifier [[34097,1],39]
+[anu-hpc-2025-cpu-cluster-1-of-3][[34097,1],57][btl_tcp_endpoint.c:625:mca_btl_tcp_endpoint_recv_connect_ack] received unexpected process identifier [[34097,1],59]
+[anu-hpc-2025-cpu-cluster-1-of-3][[34097,1],58][btl_tcp_endpoint.c:625:mca_btl_tcp_endpoint_recv_connect_ack] received unexpected process identifier [[34097,1],38]
+[anu-hpc-2025-cpu-cluster-1-of-3][[34097,1],58][btl_tcp_endpoint.c:625:mca_btl_tcp_endpoint_recv_connect_ack] received unexpected process identifier [[34097,1],45]
+[anu-hpc-2025-cpu-cluster-1-of-3][[34097,1],60][btl_tcp_endpoint.c:625:mca_btl_tcp_endpoint_recv_connect_ack] received unexpected process identifier [[34097,1],37]
+[anu-hpc-2025-cpu-cluster-1-of-3][[34097,1],38][btl_tcp_endpoint.c:625:mca_btl_tcp_endpoint_recv_connect_ack] received unexpected process identifier [[34097,1],9]
+--------------------------------------------------------------------------
+WARNING: Open MPI accepted a TCP connection from what appears to be a
+another Open MPI process but cannot find a corresponding process
+entry for that peer.
+
+This attempted connection will be ignored; your MPI job may or may not
+continue properly.
+
+  Local host: anu-hpc-2025-cpu-cluster-1-of-3
+  PID:        206539
+--------------------------------------------------------------------------
+[anu-hpc-2025-cpu-cluster-1-of-3][[34097,1],40][btl_tcp_endpoint.c:625:mca_btl_tcp_endpoint_recv_connect_ack] received unexpected process identifier [[34097,1],61]
+[anu-hpc-2025-cpu-cluster-1-of-3][[34097,1],44][btl_tcp_endpoint.c:625:mca_btl_tcp_endpoint_recv_connect_ack] received unexpected process identifier [[34097,1],57]
+[anu-hpc-2025-cpu-cluster-1-of-3][[34097,1],32][btl_tcp_endpoint.c:625:mca_btl_tcp_endpoint_recv_connect_ack] received unexpected process identifier [[34097,1],46]
+[anu-hpc-2025-cpu-cluster-1-of-3][[34097,1],33][btl_tcp_endpoint.c:625:mca_btl_tcp_endpoint_recv_connect_ack] received unexpected process identifier [[34097,1],31]
+[anu-hpc-2025-cpu-cluster-1-of-3][[34097,1],36][btl_tcp_endpoint.c:625:mca_btl_tcp_endpoint_recv_connect_ack] received unexpected process identifier [[34097,1],4]
+[anu-hpc-2025-cpu-cluster-1-of-3][[34097,1],36][btl_tcp_endpoint.c:625:mca_btl_tcp_endpoint_recv_connect_ack] received unexpected process identifier [[34097,1],3]
+[anu-hpc-2025-cpu-cluster-1-of-3][[34097,1],37][btl_tcp_endpoint.c:625:mca_btl_tcp_endpoint_recv_connect_ack] received unexpected process identifier [[34097,1],43]
+[anu-hpc-2025-cpu-cluster-1-of-3][[34097,1],37][btl_tcp_endpoint.c:625:mca_btl_tcp_endpoint_recv_connect_ack] received unexpected process identifier [[34097,1],55]
+[anu-hpc-2025-cpu-cluster-1-of-3][[34097,1],43][btl_tcp_endpoint.c:625:mca_btl_tcp_endpoint_recv_connect_ack] received unexpected process identifier [[34097,1],48]
+[anu-hpc-2025-cpu-cluster-1-of-3][[34097,1],48][btl_tcp_endpoint.c:625:mca_btl_tcp_endpoint_recv_connect_ack] received unexpected process identifier [[34097,1],35]
+[anu-hpc-2025-cpu-cluster-1-of-3][[34097,1],48][btl_tcp_endpoint.c:625:mca_btl_tcp_endpoint_recv_connect_ack] received unexpected process identifier [[34097,1],34]
+[anu-hpc-2025-cpu-cluster-1-of-3][[34097,1],49][btl_tcp_endpoint.c:625:mca_btl_tcp_endpoint_recv_connect_ack] received unexpected process identifier [[34097,1],54]
+[anu-hpc-2025-cpu-cluster-1-of-3][[34097,1],49][btl_tcp_endpoint.c:625:mca_btl_tcp_endpoint_recv_connect_ack] received unexpected process identifier [[34097,1],63]
+[anu-hpc-2025-cpu-cluster-1-of-3][[34097,1],53][btl_tcp_endpoint.c:625:mca_btl_tcp_endpoint_recv_connect_ack] received unexpected process identifier [[34097,1],60]
+[anu-hpc-2025-cpu-cluster-1-of-3][[34097,1],53][btl_tcp_endpoint.c:625:mca_btl_tcp_endpoint_recv_connect_ack] received unexpected process identifier [[34097,1],41]
+[anu-hpc-2025-cpu-cluster-1-of-3][[34097,1],56][btl_tcp_endpoint.c:625:mca_btl_tcp_endpoint_recv_connect_ack] received unexpected process identifier [[34097,1],50]
+[anu-hpc-2025-cpu-cluster-1-of-3][[34097,1],56][btl_tcp_endpoint.c:625:mca_btl_tcp_endpoint_recv_connect_ack] received unexpected process identifier [[34097,1],40]
+[anu-hpc-2025-cpu-cluster-1-of-3][[34097,1],57][btl_tcp_endpoint.c:625:mca_btl_tcp_endpoint_recv_connect_ack] received unexpected process identifier [[34097,1],24]
+[anu-hpc-2025-cpu-cluster-1-of-3][[34097,1],59][btl_tcp_endpoint.c:625:mca_btl_tcp_endpoint_recv_connect_ack] received unexpected process identifier [[34097,1],56]
+[anu-hpc-2025-cpu-cluster-1-of-3][[34097,1],59][btl_tcp_endpoint.c:625:mca_btl_tcp_endpoint_recv_connect_ack] received unexpected process identifier [[34097,1],33]
+[anu-hpc-2025-cpu-cluster-1-of-3][[34097,1],62][btl_tcp_endpoint.c:625:mca_btl_tcp_endpoint_recv_connect_ack] received unexpected process identifier [[34097,1],53]
+[anu-hpc-2025-cpu-cluster-1-of-3][[34097,1],62][btl_tcp_endpoint.c:625:mca_btl_tcp_endpoint_recv_connect_ack] received unexpected process identifier [[34097,1],51]
+[anu-hpc-2025-cpu-cluster-1-of-3][[34097,1],31][btl_tcp_endpoint.c:625:mca_btl_tcp_endpoint_recv_connect_ack] received unexpected process identifier [[34097,1],58]
+[anu-hpc-2025-cpu-cluster-1-of-3][[34097,1],63][btl_tcp_endpoint.c:625:mca_btl_tcp_endpoint_recv_connect_ack] received unexpected process identifier [[34097,1],36]
+[anu-hpc-2025-cpu-cluster-1-of-3][[34097,1],63][btl_tcp_endpoint.c:625:mca_btl_tcp_endpoint_recv_connect_ack] received unexpected process identifier [[34097,1],56]
+[anu-hpc-2025-cpu-cluster-1-of-3][[34097,1],40][btl_tcp_endpoint.c:625:mca_btl_tcp_endpoint_recv_connect_ack] received unexpected process identifier [[34097,1],10]
+[anu-hpc-2025-cpu-cluster-1-of-3][[34097,1],43][btl_tcp_endpoint.c:625:mca_btl_tcp_endpoint_recv_connect_ack] received unexpected process identifier [[34097,1],2]
+[anu-hpc-2025-cpu-cluster-1-of-3][[34097,1],32][btl_tcp_endpoint.c:625:mca_btl_tcp_endpoint_recv_connect_ack] received unexpected process identifier [[34097,1],16]
+[anu-hpc-2025-cpu-cluster-1-of-3][[34097,1],44][btl_tcp_endpoint.c:625:mca_btl_tcp_endpoint_recv_connect_ack] received unexpected process identifier [[34097,1],1]
+[anu-hpc-2025-cpu-cluster-1-of-3][[34097,1],42][btl_tcp_endpoint.c:625:mca_btl_tcp_endpoint_recv_connect_ack] received unexpected process identifier [[34097,1],5]
+[anu-hpc-2025-cpu-cluster-1-of-3][[34097,1],50][btl_tcp_endpoint.c:625:mca_btl_tcp_endpoint_recv_connect_ack] received unexpected process identifier [[34097,1],7]
+[anu-hpc-2025-cpu-cluster-1-of-3][[34097,1],33][btl_tcp_endpoint.c:625:mca_btl_tcp_endpoint_recv_connect_ack] received unexpected process identifier [[34097,1],26]
+[anu-hpc-2025-cpu-cluster-1-of-3][[34097,1],45][btl_tcp_endpoint.c:625:mca_btl_tcp_endpoint_recv_connect_ack] received unexpected process identifier [[34097,1],19]
+[anu-hpc-2025-cpu-cluster-1-of-3][[34097,1],38][btl_tcp_endpoint.c:625:mca_btl_tcp_endpoint_recv_connect_ack] received unexpected process identifier [[34097,1],20]
+[anu-hpc-2025-cpu-cluster-1-of-3][[34097,1],39][btl_tcp_endpoint.c:625:mca_btl_tcp_endpoint_recv_connect_ack] received unexpected process identifier [[34097,1],44]
+[anu-hpc-2025-cpu-cluster-1-of-3][[34097,1],60][btl_tcp_endpoint.c:625:mca_btl_tcp_endpoint_recv_connect_ack] received unexpected process identifier [[34097,1],0]
+[anu-hpc-2025-cpu-cluster-1-of-3][[34097,1],35][btl_tcp_endpoint.c:625:mca_btl_tcp_endpoint_recv_connect_ack] received unexpected process identifier [[34097,1],29]
+[anu-hpc-2025-cpu-cluster-1-of-3][[34097,1],61][btl_tcp_endpoint.c:625:mca_btl_tcp_endpoint_recv_connect_ack] received unexpected process identifier [[34097,1],32]
+[anu-hpc-2025-cpu-cluster-1-of-3][[34097,1],61][btl_tcp_endpoint.c:625:mca_btl_tcp_endpoint_recv_connect_ack] received unexpected process identifier [[34097,1],52]
+[anu-hpc-2025-cpu-cluster-1-of-3][[34097,1],47][btl_tcp_endpoint.c:625:mca_btl_tcp_endpoint_recv_connect_ack] received unexpected process identifier [[34097,1],28]
+[anu-hpc-2025-cpu-cluster-1-of-3][[34097,1],55][btl_tcp_endpoint.c:625:mca_btl_tcp_endpoint_recv_connect_ack] received unexpected process identifier [[34097,1],13]
+[anu-hpc-2025-cpu-cluster-1-of-3][[34097,1],34][btl_tcp_endpoint.c:625:mca_btl_tcp_endpoint_recv_connect_ack] received unexpected process identifier [[34097,1],23]
+[anu-hpc-2025-cpu-cluster-1-of-3][[34097,1],45][btl_tcp_endpoint.c:625:mca_btl_tcp_endpoint_recv_connect_ack] received unexpected process identifier [[34097,1],27]
+[anu-hpc-2025-cpu-cluster-1-of-3][[34097,1],52][btl_tcp_endpoint.c:625:mca_btl_tcp_endpoint_recv_connect_ack] received unexpected process identifier [[34097,1],62]
+[anu-hpc-2025-cpu-cluster-1-of-3][[34097,1],35][btl_tcp_endpoint.c:625:mca_btl_tcp_endpoint_recv_connect_ack] received unexpected process identifier [[34097,1],21]
+[anu-hpc-2025-cpu-cluster-1-of-3][[34097,1],51][btl_tcp_endpoint.c:625:mca_btl_tcp_endpoint_recv_connect_ack] received unexpected process identifier [[34097,1],25]
+[anu-hpc-2025-cpu-cluster-1-of-3][[34097,1],51][btl_tcp_endpoint.c:625:mca_btl_tcp_endpoint_recv_connect_ack] received unexpected process identifier [[34097,1],22]
+[anu-hpc-2025-cpu-cluster-1-of-3][[34097,1],55][btl_tcp_endpoint.c:625:mca_btl_tcp_endpoint_recv_connect_ack] received unexpected process identifier [[34097,1],8]
+[anu-hpc-2025-cpu-cluster-1-of-3][[34097,1],34][btl_tcp_endpoint.c:625:mca_btl_tcp_endpoint_recv_connect_ack] received unexpected process identifier [[34097,1],30]
+[anu-hpc-2025-cpu-cluster-1-of-3][[34097,1],39][btl_tcp_endpoint.c:625:mca_btl_tcp_endpoint_recv_connect_ack] received unexpected process identifier [[34097,1],12]
+[anu-hpc-2025-cpu-cluster-1-of-3][[34097,1],41][btl_tcp_endpoint.c:625:mca_btl_tcp_endpoint_recv_connect_ack] received unexpected process identifier [[34097,1],15]
+[anu-hpc-2025-cpu-cluster-1-of-3][[34097,1],46][btl_tcp_endpoint.c:625:mca_btl_tcp_endpoint_recv_connect_ack] received unexpected process identifier [[34097,1],6]
+[anu-hpc-2025-cpu-cluster-1-of-3][[34097,1],41][btl_tcp_endpoint.c:625:mca_btl_tcp_endpoint_recv_connect_ack] received unexpected process identifier [[34097,1],14]
+[anu-hpc-2025-cpu-cluster-1-of-3][[34097,1],46][btl_tcp_endpoint.c:625:mca_btl_tcp_endpoint_recv_connect_ack] received unexpected process identifier [[34097,1],17]
+[anu-hpc-2025-cpu-cluster-1-of-3][[34097,1],50][btl_tcp_endpoint.c:625:mca_btl_tcp_endpoint_recv_connect_ack] received unexpected process identifier [[34097,1],11]
+[anu-hpc-2025-cpu-cluster-1-of-3][[34097,1],52][btl_tcp_endpoint.c:625:mca_btl_tcp_endpoint_recv_connect_ack] received unexpected process identifier [[34097,1],18]
+[anu-hpc-2025-cpu-cluster-1-of-3:206394] 1 more process has sent help message help-mpi-btl-tcp.txt / server accept cannot find guid
+[anu-hpc-2025-cpu-cluster-1-of-3:206394] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+slurmstepd-anu-hpc-2025-cpu-cluster-1-of-3: error: *** JOB 13 ON anu-hpc-2025-cpu-cluster-1-of-3 CANCELLED AT 2025-10-10T11:30:27 ***
