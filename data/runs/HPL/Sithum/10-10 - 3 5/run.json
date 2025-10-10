@@ -1,8 +1,8 @@
 {
-  "id": "HPL/Sithum/10-10 - 3 4",
+  "id": "HPL/Sithum/10-10 - 3 5",
   "suite": "HPL",
   "group": "Sithum",
-  "run": "10-10 - 3 4",
+  "run": "10-10 - 3 5",
   "dat": {
     "raw": "HPLinpack benchmark input file\nHPL Runner\nHPL.out      output file name (if any)\n6            device out (6=stdout,7=stderr,file)\n1            # of problems sizes (N)\n310000       Ns\n1            # of NBs\n256          NBs\n0            PMAP process mapping (0=Row-,1=Column-major)\n1            # of process grids (P x Q)\n12            Ps\n16            Qs\n16.0         threshold\n3            # of panel fact\n0 1 2        PFACTs (0=left, 1=Crout, 2=Right)\n2            # of recursive stopping criterium\n2 4          NBMINs (>= 1)\n1            # of panels in recursion\n2            NDIVs\n3            # of recursive panel fact.\n0 1 2        RFACTs (0=left, 1=Crout, 2=Right)\n1            # of broadcast\n2            BCASTs (0=1rg,1=1rM,2=2rg,3=2rM,4=Lng,5=LnM)\n1            # of lookahead depth\n1            DEPTHs (>=0)\n2            SWAP (0=bin-exch,1=long,2=mix)\n64           swapping threshold\n0            L1 in (0=transposed,1=no-transposed) form\n0            U  in (0=transposed,1=no-transposed) form\n1            Equilibration (0=no,1=yes)\n8            memory alignment in double (> 0)",
     "parsed": {
@@ -83,11 +83,11 @@
       "equilibration": 1,
       "memoryAlignment": 8
     },
-    "path": "/raw/HPL/Sithum/10-10 - 3 4/HPL.dat"
+    "path": "/raw/HPL/Sithum/10-10 - 3 5/HPL.dat"
   },
   "job": {
     "filename": "run.sh",
-    "raw": "#!/bin/bash\n#SBATCH --job-name=hpl-test       # Job name\n#SBATCH --ntasks=192              # Total MPI tasks\n#SBATCH --ntasks-per-node=64       # MPI tasks per node\n#SBATCH --cpus-per-task=1         # CPU cores per MPI task\n#SBATCH --time=24:00:00           # Time limit hh:mm:ss\n#SBATCH --nodes=3                 # Number of nodes\n\n# Pick the cluster interconnect only\nexport OMPI_MCA_btl=self,vader,tcp\nexport OMPI_MCA_btl_tcp_if_include=enp1s0\n\n# (optional performance hints)\nexport OMPI_MCA_oob_tcp_if_include=enp1s0\nexport OMPI_MCA_tcp_if_include=enp1s0\n\n# keep environment consistent\nexport PATH=/opt/openmpi-4.1.6/bin:$PATH\nexport LD_LIBRARY_PATH=/opt/openmpi-4.1.6/lib:$LD_LIBRARY_PATH\n\n# Optional: ensure SLURM launching is used cleanly\nexport OMPI_MCA_plm=slurm\nexport OMPI_MCA_orte_launch=slurm\n\n# If using OpenMP threads inside HPL, uncomment and tune:\nexport OMP_NUM_THREADS=1\n\n# Ulimits\nulimit -l unlimited\nulimit -n 65536\n\n# Run the MPI program\nmpirun ./xhpl",
+    "raw": "#!/bin/bash\n#SBATCH --job-name=hpl-test       # Job name\n#SBATCH --ntasks=192              # Total MPI tasks\n#SBATCH --ntasks-per-node=64       # MPI tasks per node\n#SBATCH --cpus-per-task=1         # CPU cores per MPI task\n#SBATCH --time=24:00:00           # Time limit hh:mm:ss\n#SBATCH --nodes=3                 # Number of nodes\n\n# MPI settings (Ethernet)\nexport OMPI_MCA_btl=self,vader,tcp\nexport OMPI_MCA_btl_tcp_if_include=enp1s0\nexport OMPI_MCA_oob_tcp_if_include=enp1s0\nexport OMPI_MCA_pml=ob1\n\n# Collective tuning\nexport OMPI_MCA_coll_tuned_use_dynamic_rules=1\nexport OMPI_MCA_coll_tuned_bcast_algorithm=4\nexport OMPI_MCA_coll_tuned_allreduce_algorithm=6\n\n# SLURM Integration\nexport OMPI_MCA_plm=slurm\nexport OMPI_MCA_orte_launch=slurm\n\n# Thread binding and OpenMP\nexport OMP_NUM_THREADS=1\nexport OMP_PROC_BIND=close\nexport OMP_PLACES=cores\n\n# Memory and file limits\nulimit -l unlimited\nulimit -n 65536\n\n# Run the MPI program\nmpirun ./xhpl",
     "sbatch": {
       "job-name": "hpl-test       # Job name",
       "ntasks": null,
@@ -96,10 +96,10 @@
       "time": "24:00:00           # Time limit hh:mm:ss",
       "nodes": null
     },
-    "path": "/raw/HPL/Sithum/10-10 - 3 4/run.sh"
+    "path": "/raw/HPL/Sithum/10-10 - 3 5/run.sh"
   },
   "out": {
-    "path": "/raw/HPL/Sithum/10-10 - 3 4/run.sh-31.out",
+    "path": "/raw/HPL/Sithum/10-10 - 3 5/run.sh-32.out",
     "runs": [],
     "summary": {
       "testsTotal": null,
@@ -109,8 +109,8 @@
     }
   },
   "err": {
-    "path": "/raw/HPL/Sithum/10-10 - 3 4/run.sh-31.err",
-    "size": 2049
+    "path": "/raw/HPL/Sithum/10-10 - 3 5/run.sh-32.err",
+    "size": 540
   },
   "best": null
 }
