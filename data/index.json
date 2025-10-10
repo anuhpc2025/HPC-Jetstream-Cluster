@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-10-10T11:12:06.670Z",
+  "generatedAt": "2025-10-10T11:18:15.181Z",
   "runs": [
     {
       "id": "HPL/Daniel/10-10-1",
@@ -11,10 +11,38 @@
       "hasErr": false
     },
     {
-      "id": "HPL/Sithum/10-10 - 0",
+      "id": "HPL/Sithum/10-10 - 0 1",
       "suite": "HPL",
       "group": "Sithum",
-      "run": "10-10 - 0",
+      "run": "10-10 - 0 1",
+      "best": null,
+      "outSummary": {
+        "testsTotal": null,
+        "testsPassed": null,
+        "testsFailed": null,
+        "testsSkipped": null
+      },
+      "hasErr": true
+    },
+    {
+      "id": "HPL/Sithum/10-10 - 0 2",
+      "suite": "HPL",
+      "group": "Sithum",
+      "run": "10-10 - 0 2",
+      "best": null,
+      "outSummary": {
+        "testsTotal": null,
+        "testsPassed": null,
+        "testsFailed": null,
+        "testsSkipped": null
+      },
+      "hasErr": true
+    },
+    {
+      "id": "HPL/Sithum/10-10 - 0 3",
+      "suite": "HPL",
+      "group": "Sithum",
+      "run": "10-10 - 0 3",
       "best": null,
       "outSummary": {
         "testsTotal": null,

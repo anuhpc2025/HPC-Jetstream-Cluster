@@ -1,8 +1,8 @@
 {
-  "id": "HPL/Sithum/10-10 - 0",
+  "id": "HPL/Sithum/10-10 - 0 2",
   "suite": "HPL",
   "group": "Sithum",
-  "run": "10-10 - 0",
+  "run": "10-10 - 0 2",
   "dat": {
     "raw": "HPLinpack benchmark input file\nCustom quick test\nHPL.out      output file name (if any)\n6            device out (6=stdout,7=stderr,file)\n1            # of problems sizes (N)\n10000        Ns\n1            # of NBs\n128          NBs\n0            PMAP process mapping (0=Row-,1=Column-major)\n1            # of process grids (P x Q)\n8            Ps\n16            Qs\n16.0         threshold\n3            # of panel fact\n0 1 2        PFACTs (0=left, 1=Crout, 2=Right)\n2            # of recursive stopping criterium\n2 4          NBMINs (>= 1)\n1            # of panels in recursion\n2            NDIVs\n3            # of recursive panel fact.\n0 1 2        RFACTs (0=left, 1=Crout, 2=Right)\n1            # of broadcast\n2            BCASTs (0=1rg,1=1rM,2=2rg,3=2rM,4=Lng,5=LnM)\n1            # of lookahead depth\n1            DEPTHs (>=0)\n2            SWAP (0=bin-exch,1=long,2=mix)\n64           swapping threshold\n0            L1 in (0=transposed,1=no-transposed) form\n0            U  in (0=transposed,1=no-transposed) form\n1            Equilibration (0=no,1=yes)\n8            memory alignment in double (> 0)",
     "parsed": {
@@ -83,11 +83,11 @@
       "equilibration": 1,
       "memoryAlignment": 8
     },
-    "path": "/raw/HPL/Sithum/10-10 - 0/HPL.dat"
+    "path": "/raw/HPL/Sithum/10-10 - 0 2/HPL.dat"
   },
   "job": {
     "filename": "run.sh",
-    "raw": "#!/bin/bash\n#SBATCH --job-name=hpl-test       # Job name\n#SBATCH --ntasks=192              # Total MPI tasks\n#SBATCH --ntasks-per-node=64       # MPI tasks per node\n#SBATCH --cpus-per-task=1         # CPU cores per MPI task\n#SBATCH --time=00:10:00           # Time limit hh:mm:ss\n#SBATCH --nodes=3                 # Number of nodes\n\nwhich srun\nwhich mpirun\n\necho PATH\necho LD_LIBRARY_PATH\n\nexport PATH=/opt/slurm/bin:/usr/bin:/bin:/opt/openmpi-4.1.6/bin:$PATH\nexport LD_LIBRARY_PATH=/opt/openmpi-4.1.6/lib:$LD_LIBRARY_PATH\n\nwhich srun\nwhich mpirun\n\necho PATH\necho LD_LIBRARY_PATH\n\n# Ulimits\nulimit -l unlimited\nulimit -n 65536\n\n# Run the MPI program\nmpirun ./xhpl",
+    "raw": "#!/bin/bash\n#SBATCH --job-name=hpl-test       # Job name\n#SBATCH --ntasks=192              # Total MPI tasks\n#SBATCH --ntasks-per-node=64       # MPI tasks per node\n#SBATCH --cpus-per-task=1         # CPU cores per MPI task\n#SBATCH --time=00:10:00           # Time limit hh:mm:ss\n#SBATCH --nodes=3                 # Number of nodes\n\nhostname\nwhich srun\nwhich mpirun\necho \"PATH is: $PATH\"\nls -l /bin/srun\nenv | grep -E \"SLURM|PATH\"\n\necho \"TESTTESTTEST\"\nexport PATH=/opt/slurm/bin:/usr/bin:/bin:/opt/openmpi-4.1.6/bin:$PATH\nexport LD_LIBRARY_PATH=/opt/openmpi-4.1.6/lib:$LD_LIBRARY_PATH\n\nhostname\nwhich srun\nwhich mpirun\necho \"PATH is: $PATH\"\nls -l /bin/srun\nenv | grep -E \"SLURM|PATH\"\n\n# Ulimits\nulimit -l unlimited\nulimit -n 65536\n\n# Run the MPI program\nsrun ./xhpl",
     "sbatch": {
       "job-name": "hpl-test       # Job name",
       "ntasks": null,
@@ -96,10 +96,10 @@
       "time": "00:10:00           # Time limit hh:mm:ss",
       "nodes": null
     },
-    "path": "/raw/HPL/Sithum/10-10 - 0/run.sh"
+    "path": "/raw/HPL/Sithum/10-10 - 0 2/run.sh"
   },
   "out": {
-    "path": "/raw/HPL/Sithum/10-10 - 0/run.sh-9.out",
+    "path": "/raw/HPL/Sithum/10-10 - 0 2/run.sh-11.out",
     "runs": [],
     "summary": {
       "testsTotal": null,
@@ -109,8 +109,8 @@
     }
   },
   "err": {
-    "path": "/raw/HPL/Sithum/10-10 - 0/run.sh-9.err",
-    "size": 611
+    "path": "/raw/HPL/Sithum/10-10 - 0 2/run.sh-11.err",
+    "size": 188
   },
   "best": null
 }
