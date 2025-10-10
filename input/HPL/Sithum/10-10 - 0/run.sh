@@ -6,11 +6,12 @@
 #SBATCH --time=00:10:00           # Time limit hh:mm:ss
 #SBATCH --nodes=3                 # Number of nodes
 
-source /etc/profile.d/openmpi.sh
+export PATH=/opt/slurm/bin:/usr/bin:/bin:/opt/openmpi-4.1.6/bin:$PATH
+export LD_LIBRARY_PATH=/opt/openmpi-4.1.6/lib:$LD_LIBRARY_PATH
 
 # Ulimits
 ulimit -l unlimited
 ulimit -n 65536
 
 # Run the MPI program
-srun ./xhpl
+mpirun ./xhpl
