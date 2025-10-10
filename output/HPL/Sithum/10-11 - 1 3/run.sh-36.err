@@ -1,0 +1,5 @@
+/var/spool/slurmd/job00036/slurm_script: line 10: /proc/sys/vm/drop_caches: Permission denied
+/var/spool/slurmd/job00036/slurm_script: line 11: /proc/sys/vm/compact_memory: Permission denied
+/var/spool/slurmd/job00036/slurm_script: line 12: /proc/sys/kernel/numa_balancing: Permission denied
+/var/spool/slurmd/job00036/slurm_script: line 13: /sys/kernel/mm/transparent_hugepage/enabled: Permission denied
+/var/spool/slurmd/job00036/slurm_script: line 14: /sys/kernel/mm/transparent_hugepage/defrag: Permission denied
