@@ -4,7 +4,7 @@
   "group": "Sithum",
   "run": "10-10 - 3 3",
   "dat": {
-    "raw": "HPLinpack benchmark input file\nHPL Runner\nHPL.out      output file name (if any)\n6            device out (6=stdout,7=stderr,file)\n1            # of problems sizes (N)\n310000       Ns\n1            # of NBs\n256          NBs\n0            PMAP process mapping (0=Row-,1=Column-major)\n1            # of process grids (P x Q)\n12            Ps\n16            Qs\n16.0         threshold\n3            # of panel fact\n0 1 2        PFACTs (0=left, 1=Crout, 2=Right)\n2            # of recursive stopping criterium\n2 4          NBMINs (>= 1)\n1            # of panels in recursion\n2            NDIVs\n3            # of recursive panel fact.\n0 1 2        RFACTs (0=left, 1=Crout, 2=Right)\n1            # of broadcast\n2            BCASTs (0=1rg,1=1rM,2=2rg,3=2rM,4=Lng,5=LnM)\n1            # of lookahead depth\n1            DEPTHs (>=0)\n2            SWAP (0=bin-exch,1=long,2=mix)\n64           swapping threshold\n0            L1 in (0=transposed,1=no-transposed) form\n0            U  in (0=transposed,1=no-transposed) form\n1            Equilibration (0=no,1=yes)\n8            memory alignment in double (> 0)",
+    "raw": "HPLinpack benchmark input file\nHPL Runner\nHPL.out      output file name (if any)\n6            device out (6=stdout,7=stderr,file)\n1            # of problems sizes (N)\n120000       Ns\n1            # of NBs\n256          NBs\n0            PMAP process mapping (0=Row-,1=Column-major)\n1            # of process grids (P x Q)\n12            Ps\n16            Qs\n16.0         threshold\n3            # of panel fact\n0 1 2        PFACTs (0=left, 1=Crout, 2=Right)\n2            # of recursive stopping criterium\n2 4          NBMINs (>= 1)\n1            # of panels in recursion\n2            NDIVs\n3            # of recursive panel fact.\n0 1 2        RFACTs (0=left, 1=Crout, 2=Right)\n1            # of broadcast\n2            BCASTs (0=1rg,1=1rM,2=2rg,3=2rM,4=Lng,5=LnM)\n1            # of lookahead depth\n1            DEPTHs (>=0)\n2            SWAP (0=bin-exch,1=long,2=mix)\n64           swapping threshold\n0            L1 in (0=transposed,1=no-transposed) form\n0            U  in (0=transposed,1=no-transposed) form\n1            Equilibration (0=no,1=yes)\n8            memory alignment in double (> 0)",
     "parsed": {
       "header": [
         "HPLinpack benchmark input file",
@@ -14,7 +14,7 @@
       "deviceOut": 6,
       "numProblemSizes": 1,
       "Ns": [
-        310000
+        120000
       ],
       "numNBs": 1,
       "NBs": [
@@ -87,30 +87,267 @@
   },
   "job": {
     "filename": "run.sh",
-    "raw": "#!/bin/bash\n#SBATCH --job-name=hpl-test       # Job name\n#SBATCH --ntasks=192              # Total MPI tasks\n#SBATCH --ntasks-per-node=64       # MPI tasks per node\n#SBATCH --cpus-per-task=1         # CPU cores per MPI task\n#SBATCH --time=00:10:00           # Time limit hh:mm:ss\n#SBATCH --nodes=3                 # Number of nodes\n\n# Pick the cluster interconnect only\nexport OMPI_MCA_btl=self,vader,tcp\nexport OMPI_MCA_btl_tcp_if_include=enp1s0\n\n# (optional performance hints)\nexport OMPI_MCA_oob_tcp_if_include=enp1s0\nexport OMPI_MCA_tcp_if_include=enp1s0\n\n# keep environment consistent\nexport PATH=/opt/openmpi-4.1.6/bin:$PATH\nexport LD_LIBRARY_PATH=/opt/openmpi-4.1.6/lib:$LD_LIBRARY_PATH\n\n# Optional: ensure SLURM launching is used cleanly\nexport OMPI_MCA_plm=slurm\nexport OMPI_MCA_orte_launch=slurm\n\n# If using OpenMP threads inside HPL, uncomment and tune:\nexport OMP_NUM_THREADS=1\n\n# Ulimits\nulimit -l unlimited\nulimit -n 65536\n\n# Run the MPI program\nmpirun ./xhpl",
+    "raw": "#!/bin/bash\n#SBATCH --job-name=hpl-test       # Job name\n#SBATCH --ntasks=192              # Total MPI tasks\n#SBATCH --ntasks-per-node=64       # MPI tasks per node\n#SBATCH --cpus-per-task=1         # CPU cores per MPI task\n#SBATCH --time=24:00:00           # Time limit hh:mm:ss\n#SBATCH --nodes=3                 # Number of nodes\n\n# MPI settings (Ethernet)\nexport OMPI_MCA_btl=self,vader,tcp\nexport OMPI_MCA_btl_tcp_if_include=enp1s0\nexport OMPI_MCA_oob_tcp_if_include=enp1s0\nexport OMPI_MCA_pml=ob1\n\n# Collective tuning\nexport OMPI_MCA_coll_tuned_use_dynamic_rules=1\nexport OMPI_MCA_coll_tuned_bcast_algorithm=4\nexport OMPI_MCA_coll_tuned_allreduce_algorithm=6\n\n# SLURM Integration\nexport OMPI_MCA_plm=slurm\nexport OMPI_MCA_orte_launch=slurm\n\n# Thread binding and OpenMP\nexport OMP_NUM_THREADS=1\nexport OMP_PROC_BIND=close\nexport OMP_PLACES=cores\n\n# Memory and file limits\nulimit -l unlimited\nulimit -n 65536\n\n# Run the MPI program\nmpirun ./xhpl",
     "sbatch": {
       "job-name": "hpl-test       # Job name",
       "ntasks": null,
       "ntasks-per-node": null,
       "cpus-per-task": null,
-      "time": "00:10:00           # Time limit hh:mm:ss",
+      "time": "24:00:00           # Time limit hh:mm:ss",
       "nodes": null
     },
     "path": "/raw/HPL/Sithum/10-10 - 3 3/run.sh"
   },
   "out": {
-    "path": "/raw/HPL/Sithum/10-10 - 3 3/run.sh-27.out",
-    "runs": [],
+    "path": "/raw/HPL/Sithum/10-10 - 3 3/run.sh-30.out",
+    "runs": [
+      {
+        "tv": "WRC12L2L2o",
+        "N": 120000,
+        "NB": 256,
+        "P": 12,
+        "Q": 16,
+        "timeSec": 361.27,
+        "gflops": 3188.8,
+        "startTime": "Fri Oct 10 15:08:14 2025",
+        "endTime": "Fri Oct 10 15:14:15 2025",
+        "residual": 0.00168180484,
+        "residualPassed": true
+      },
+      {
+        "tv": "WRC12L2L4o",
+        "N": 120000,
+        "NB": 256,
+        "P": 12,
+        "Q": 16,
+        "timeSec": 352.05,
+        "gflops": 3272.4,
+        "startTime": "Fri Oct 10 15:14:18 2025",
+        "endTime": "Fri Oct 10 15:20:10 2025",
+        "residual": 0.00178894643,
+        "residualPassed": true
+      },
+      {
+        "tv": "WRC12L2C2o",
+        "N": 120000,
+        "NB": 256,
+        "P": 12,
+        "Q": 16,
+        "timeSec": 361.96,
+        "gflops": 3182.7,
+        "startTime": "Fri Oct 10 15:20:12 2025",
+        "endTime": "Fri Oct 10 15:26:14 2025",
+        "residual": 0.00168180484,
+        "residualPassed": true
+      },
+      {
+        "tv": "WRC12L2C4o",
+        "N": 120000,
+        "NB": 256,
+        "P": 12,
+        "Q": 16,
+        "timeSec": 362.45,
+        "gflops": 3178.4,
+        "startTime": "Fri Oct 10 15:26:17 2025",
+        "endTime": "Fri Oct 10 15:32:19 2025",
+        "residual": 0.00180145885,
+        "residualPassed": true
+      },
+      {
+        "tv": "WRC12L2R2o",
+        "N": 120000,
+        "NB": 256,
+        "P": 12,
+        "Q": 16,
+        "timeSec": 365.48,
+        "gflops": 3152,
+        "startTime": "Fri Oct 10 15:32:22 2025",
+        "endTime": "Fri Oct 10 15:38:27 2025",
+        "residual": 0.00168180484,
+        "residualPassed": true
+      },
+      {
+        "tv": "WRC12L2R4o",
+        "N": 120000,
+        "NB": 256,
+        "P": 12,
+        "Q": 16,
+        "timeSec": 366.85,
+        "gflops": 3140.3,
+        "startTime": "Fri Oct 10 15:38:30 2025",
+        "endTime": "Fri Oct 10 15:44:36 2025",
+        "residual": 0.00180145885,
+        "residualPassed": true
+      },
+      {
+        "tv": "WRC12C2L2o",
+        "N": 120000,
+        "NB": 256,
+        "P": 12,
+        "Q": 16,
+        "timeSec": 366.94,
+        "gflops": 3139.6,
+        "startTime": "Fri Oct 10 15:44:39 2025",
+        "endTime": "Fri Oct 10 15:50:46 2025",
+        "residual": 0.00168180484,
+        "residualPassed": true
+      },
+      {
+        "tv": "WRC12C2L4o",
+        "N": 120000,
+        "NB": 256,
+        "P": 12,
+        "Q": 16,
+        "timeSec": 398.25,
+        "gflops": 2892.7,
+        "startTime": "Fri Oct 10 15:50:48 2025",
+        "endTime": "Fri Oct 10 15:57:26 2025",
+        "residual": 0.00178894643,
+        "residualPassed": true
+      },
+      {
+        "tv": "WRC12C2C2o",
+        "N": 120000,
+        "NB": 256,
+        "P": 12,
+        "Q": 16,
+        "timeSec": 513.59,
+        "gflops": 2243.1,
+        "startTime": "Fri Oct 10 15:57:28 2025",
+        "endTime": "Fri Oct 10 16:06:02 2025",
+        "residual": 0.00168180484,
+        "residualPassed": true
+      },
+      {
+        "tv": "WRC12C2C4o",
+        "N": 120000,
+        "NB": 256,
+        "P": 12,
+        "Q": 16,
+        "timeSec": 358.56,
+        "gflops": 3212.9,
+        "startTime": "Fri Oct 10 16:06:05 2025",
+        "endTime": "Fri Oct 10 16:12:03 2025",
+        "residual": 0.00180145885,
+        "residualPassed": true
+      },
+      {
+        "tv": "WRC12C2R2o",
+        "N": 120000,
+        "NB": 256,
+        "P": 12,
+        "Q": 16,
+        "timeSec": 358.12,
+        "gflops": 3216.9,
+        "startTime": "Fri Oct 10 16:12:05 2025",
+        "endTime": "Fri Oct 10 16:18:04 2025",
+        "residual": 0.00168180484,
+        "residualPassed": true
+      },
+      {
+        "tv": "WRC12C2R4o",
+        "N": 120000,
+        "NB": 256,
+        "P": 12,
+        "Q": 16,
+        "timeSec": 360.3,
+        "gflops": 3197.4,
+        "startTime": "Fri Oct 10 16:18:06 2025",
+        "endTime": "Fri Oct 10 16:24:06 2025",
+        "residual": 0.00180145885,
+        "residualPassed": true
+      },
+      {
+        "tv": "WRC12R2L2o",
+        "N": 120000,
+        "NB": 256,
+        "P": 12,
+        "Q": 16,
+        "timeSec": 383.87,
+        "gflops": 3001.1,
+        "startTime": "Fri Oct 10 16:24:08 2025",
+        "endTime": "Fri Oct 10 16:30:32 2025",
+        "residual": 0.00168180484,
+        "residualPassed": true
+      },
+      {
+        "tv": "WRC12R2L4o",
+        "N": 120000,
+        "NB": 256,
+        "P": 12,
+        "Q": 16,
+        "timeSec": 367.02,
+        "gflops": 3138.8,
+        "startTime": "Fri Oct 10 16:30:34 2025",
+        "endTime": "Fri Oct 10 16:36:41 2025",
+        "residual": 0.00178894643,
+        "residualPassed": true
+      },
+      {
+        "tv": "WRC12R2C2o",
+        "N": 120000,
+        "NB": 256,
+        "P": 12,
+        "Q": 16,
+        "timeSec": 358.47,
+        "gflops": 3213.7,
+        "startTime": "Fri Oct 10 16:36:43 2025",
+        "endTime": "Fri Oct 10 16:42:42 2025",
+        "residual": 0.00168180484,
+        "residualPassed": true
+      },
+      {
+        "tv": "WRC12R2C4o",
+        "N": 120000,
+        "NB": 256,
+        "P": 12,
+        "Q": 16,
+        "timeSec": 364.11,
+        "gflops": 3163.9,
+        "startTime": "Fri Oct 10 16:42:44 2025",
+        "endTime": "Fri Oct 10 16:48:48 2025",
+        "residual": 0.00180145885,
+        "residualPassed": true
+      },
+      {
+        "tv": "WRC12R2R2o",
+        "N": 120000,
+        "NB": 256,
+        "P": 12,
+        "Q": 16,
+        "timeSec": 459.94,
+        "gflops": 2504.7,
+        "startTime": "Fri Oct 10 16:48:50 2025",
+        "endTime": "Fri Oct 10 16:56:30 2025",
+        "residual": 0.00168180484,
+        "residualPassed": true
+      },
+      {
+        "tv": "WRC12R2R4o",
+        "N": 120000,
+        "NB": 256,
+        "P": 12,
+        "Q": 16,
+        "timeSec": 415.49,
+        "gflops": 2772.7,
+        "startTime": "Fri Oct 10 16:56:33 2025",
+        "endTime": "Fri Oct 10 17:03:28 2025",
+        "residual": 0.00180145885,
+        "residualPassed": true
+      }
+    ],
     "summary": {
-      "testsTotal": null,
-      "testsPassed": null,
-      "testsFailed": null,
-      "testsSkipped": null
+      "testsTotal": 18,
+      "testsPassed": 18,
+      "testsFailed": 0,
+      "testsSkipped": 0
     }
   },
-  "err": {
-    "path": "/raw/HPL/Sithum/10-10 - 3 3/run.sh-27.err",
-    "size": 134
-  },
-  "best": null
+  "err": null,
+  "best": {
+    "gflops": 3272.4,
+    "N": 120000,
+    "NB": 256,
+    "timeSec": 352.05
+  }
 }
