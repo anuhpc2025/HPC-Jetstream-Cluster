@@ -3,29 +3,30 @@
 #SBATCH --ntasks=192              # Total MPI tasks
 #SBATCH --ntasks-per-node=64       # MPI tasks per node
 #SBATCH --cpus-per-task=1         # CPU cores per MPI task
-#SBATCH --time=00:10:00           # Time limit hh:mm:ss
+#SBATCH --time=01:00:00           # Time limit hh:mm:ss
 #SBATCH --nodes=3                 # Number of nodes
 
-# Pick the cluster interconnect only
+# MPI settings (Ethernet)
 export OMPI_MCA_btl=self,vader,tcp
 export OMPI_MCA_btl_tcp_if_include=enp1s0
-
-# (optional performance hints)
 export OMPI_MCA_oob_tcp_if_include=enp1s0
-export OMPI_MCA_tcp_if_include=enp1s0
+export OMPI_MCA_pml=ob1
 
-# keep environment consistent
-export PATH=/opt/openmpi-4.1.6/bin:$PATH
-export LD_LIBRARY_PATH=/opt/openmpi-4.1.6/lib:$LD_LIBRARY_PATH
+# Collective tuning
+export OMPI_MCA_coll_tuned_use_dynamic_rules=1
+export OMPI_MCA_coll_tuned_bcast_algorithm=4
+export OMPI_MCA_coll_tuned_allreduce_algorithm=6
 
-# Optional: ensure SLURM launching is used cleanly
+# SLURM Integration
 export OMPI_MCA_plm=slurm
 export OMPI_MCA_orte_launch=slurm
 
-# If using OpenMP threads inside HPL, uncomment and tune:
+# Thread binding and OpenMP
 export OMP_NUM_THREADS=1
+export OMP_PROC_BIND=close
+export OMP_PLACES=cores
 
-# Ulimits
+# Memory and file limits
 ulimit -l unlimited
 ulimit -n 65536
 
