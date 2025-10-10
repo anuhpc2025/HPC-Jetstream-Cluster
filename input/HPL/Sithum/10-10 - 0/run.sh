@@ -6,8 +6,14 @@
 #SBATCH --time=00:10:00           # Time limit hh:mm:ss
 #SBATCH --nodes=3                 # Number of nodes
 
+which srun
+which mpirun
+
 export PATH=/opt/slurm/bin:/usr/bin:/bin:/opt/openmpi-4.1.6/bin:$PATH
 export LD_LIBRARY_PATH=/opt/openmpi-4.1.6/lib:$LD_LIBRARY_PATH
+
+which srun
+which mpirun
 
 # Ulimits
 ulimit -l unlimited
