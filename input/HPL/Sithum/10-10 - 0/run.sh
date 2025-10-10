@@ -9,11 +9,17 @@
 which srun
 which mpirun
 
+echo PATH
+echo LD_LIBRARY_PATH
+
 export PATH=/opt/slurm/bin:/usr/bin:/bin:/opt/openmpi-4.1.6/bin:$PATH
 export LD_LIBRARY_PATH=/opt/openmpi-4.1.6/lib:$LD_LIBRARY_PATH
 
 which srun
 which mpirun
+
+echo PATH
+echo LD_LIBRARY_PATH
 
 # Ulimits
 ulimit -l unlimited
