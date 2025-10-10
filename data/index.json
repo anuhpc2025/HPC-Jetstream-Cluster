@@ -1,15 +1,6 @@
 {
-  "generatedAt": "2025-10-10T11:57:35.147Z",
+  "generatedAt": "2025-10-10T12:17:08.779Z",
   "runs": [
-    {
-      "id": "HPL/Daniel/10-10-1",
-      "suite": "HPL",
-      "group": "Daniel",
-      "run": "10-10-1",
-      "best": null,
-      "outSummary": null,
-      "hasErr": false
-    },
     {
       "id": "HPL/Sithum/10-10 - 0 1",
       "suite": "HPL",
@@ -85,10 +76,10 @@
       "group": "Sithum",
       "run": "10-10 - 2 1",
       "best": {
-        "gflops": 4.3,
-        "N": 2,
-        "NB": 10000,
-        "timeSec": 16
+        "gflops": 163.67,
+        "N": 10000,
+        "NB": 128,
+        "timeSec": 4.07
       },
       "outSummary": {
         "testsTotal": 18,
@@ -104,10 +95,10 @@
       "group": "Sithum",
       "run": "10-10 - 2 2",
       "best": {
-        "gflops": 4.41,
-        "N": 2,
-        "NB": 10000,
-        "timeSec": 16
+        "gflops": 164.19,
+        "N": 10000,
+        "NB": 128,
+        "timeSec": 4.06
       },
       "outSummary": {
         "testsTotal": 18,
@@ -123,10 +114,10 @@
       "group": "Sithum",
       "run": "10-10 - 2 3",
       "best": {
-        "gflops": 4.37,
-        "N": 2,
-        "NB": 10000,
-        "timeSec": 16
+        "gflops": 159.31,
+        "N": 10000,
+        "NB": 128,
+        "timeSec": 4.19
       },
       "outSummary": {
         "testsTotal": 18,
@@ -142,10 +133,10 @@
       "group": "Sithum",
       "run": "10-10 - 2 4",
       "best": {
-        "gflops": 4.39,
-        "N": 2,
-        "NB": 10000,
-        "timeSec": 16
+        "gflops": 160.28,
+        "N": 10000,
+        "NB": 128,
+        "timeSec": 4.16
       },
       "outSummary": {
         "testsTotal": 18,
