@@ -1,0 +1,353 @@
+{
+  "id": "HPL/Sithum/10-10 - 3 0",
+  "suite": "HPL",
+  "group": "Sithum",
+  "run": "10-10 - 3 0",
+  "dat": {
+    "raw": "HPLinpack benchmark input file\nCustom quick test\nHPL.out      output file name (if any)\n6            device out (6=stdout,7=stderr,file)\n1            # of problems sizes (N)\n10000        Ns\n1            # of NBs\n128          NBs\n0            PMAP process mapping (0=Row-,1=Column-major)\n1            # of process grids (P x Q)\n8            Ps\n16            Qs\n16.0         threshold\n3            # of panel fact\n0 1 2        PFACTs (0=left, 1=Crout, 2=Right)\n2            # of recursive stopping criterium\n2 4          NBMINs (>= 1)\n1            # of panels in recursion\n2            NDIVs\n3            # of recursive panel fact.\n0 1 2        RFACTs (0=left, 1=Crout, 2=Right)\n1            # of broadcast\n2            BCASTs (0=1rg,1=1rM,2=2rg,3=2rM,4=Lng,5=LnM)\n1            # of lookahead depth\n1            DEPTHs (>=0)\n2            SWAP (0=bin-exch,1=long,2=mix)\n64           swapping threshold\n0            L1 in (0=transposed,1=no-transposed) form\n0            U  in (0=transposed,1=no-transposed) form\n1            Equilibration (0=no,1=yes)\n8            memory alignment in double (> 0)",
+    "parsed": {
+      "header": [
+        "HPLinpack benchmark input file",
+        "Custom quick test"
+      ],
+      "outputFilename": "HPL.out",
+      "deviceOut": 6,
+      "numProblemSizes": 1,
+      "Ns": [
+        10000
+      ],
+      "numNBs": 1,
+      "NBs": [
+        128
+      ],
+      "pmap": 0,
+      "numGrids": 1,
+      "Ps": [
+        8
+      ],
+      "Qs": [
+        16
+      ],
+      "threshold": 16,
+      "numPFACT": 3,
+      "PFACTs": [
+        0,
+        1,
+        2,
+        0,
+        1,
+        2
+      ],
+      "numNBMIN": 2,
+      "NBMINs": [
+        2,
+        4,
+        1
+      ],
+      "numPanelsInRecursion": 1,
+      "NDIVs": [
+        2
+      ],
+      "numRFACT": 3,
+      "RFACTs": [
+        0,
+        1,
+        2,
+        0,
+        1,
+        2
+      ],
+      "numBCAST": 1,
+      "BCASTs": [
+        2,
+        0,
+        1,
+        1,
+        1,
+        2,
+        2,
+        3,
+        2,
+        4,
+        5
+      ],
+      "numDEPTH": 1,
+      "DEPTHs": [
+        1,
+        0
+      ],
+      "swapMode": 2,
+      "swapThreshold": 64,
+      "L1": 0,
+      "U": 0,
+      "equilibration": 1,
+      "memoryAlignment": 8
+    },
+    "path": "/raw/HPL/Sithum/10-10 - 3 0/HPL.dat"
+  },
+  "job": {
+    "filename": "run.sh",
+    "raw": "#!/bin/bash\n#SBATCH --job-name=hpl-test       # Job name\n#SBATCH --ntasks=192              # Total MPI tasks\n#SBATCH --ntasks-per-node=64       # MPI tasks per node\n#SBATCH --cpus-per-task=1         # CPU cores per MPI task\n#SBATCH --time=00:10:00           # Time limit hh:mm:ss\n#SBATCH --nodes=3                 # Number of nodes\n\n# Pick the cluster interconnect only\nexport OMPI_MCA_btl=self,vader,tcp\nexport OMPI_MCA_btl_tcp_if_include=enp1s0\n\n# (optional performance hints)\nexport OMPI_MCA_oob_tcp_if_include=enp1s0\nexport OMPI_MCA_tcp_if_include=enp1s0\n\n# keep environment consistent\nexport PATH=/opt/openmpi-4.1.6/bin:$PATH\nexport LD_LIBRARY_PATH=/opt/openmpi-4.1.6/lib:$LD_LIBRARY_PATH\n\n# Optional: ensure SLURM launching is used cleanly\nexport OMPI_MCA_plm=slurm\nexport OMPI_MCA_orte_launch=slurm\n\n# If using OpenMP threads inside HPL, uncomment and tune:\nexport OMP_NUM_THREADS=1\n\n# Ulimits\nulimit -l unlimited\nulimit -n 65536\n\n# Run the MPI program\nmpirun ./xhpl",
+    "sbatch": {
+      "job-name": "hpl-test       # Job name",
+      "ntasks": null,
+      "ntasks-per-node": null,
+      "cpus-per-task": null,
+      "time": "00:10:00           # Time limit hh:mm:ss",
+      "nodes": null
+    },
+    "path": "/raw/HPL/Sithum/10-10 - 3 0/run.sh"
+  },
+  "out": {
+    "path": "/raw/HPL/Sithum/10-10 - 3 0/run.sh-24.out",
+    "runs": [
+      {
+        "tv": "WRC12L2L2o",
+        "N": 10000,
+        "NB": 128,
+        "P": 8,
+        "Q": 16,
+        "timeSec": 4.44,
+        "gflops": 150.3,
+        "startTime": "Fri Oct 10 12:58:11 2025",
+        "endTime": "Fri Oct 10 12:58:16 2025",
+        "residual": 0.00372988033,
+        "residualPassed": true
+      },
+      {
+        "tv": "WRC12L2L4o",
+        "N": 10000,
+        "NB": 128,
+        "P": 8,
+        "Q": 16,
+        "timeSec": 4.57,
+        "gflops": 145.96,
+        "startTime": "Fri Oct 10 12:58:16 2025",
+        "endTime": "Fri Oct 10 12:58:20 2025",
+        "residual": 0.00336825074,
+        "residualPassed": true
+      },
+      {
+        "tv": "WRC12L2C2o",
+        "N": 10000,
+        "NB": 128,
+        "P": 8,
+        "Q": 16,
+        "timeSec": 4.51,
+        "gflops": 147.99,
+        "startTime": "Fri Oct 10 12:58:20 2025",
+        "endTime": "Fri Oct 10 12:58:25 2025",
+        "residual": 0.00372988033,
+        "residualPassed": true
+      },
+      {
+        "tv": "WRC12L2C4o",
+        "N": 10000,
+        "NB": 128,
+        "P": 8,
+        "Q": 16,
+        "timeSec": 4.46,
+        "gflops": 149.36,
+        "startTime": "Fri Oct 10 12:58:25 2025",
+        "endTime": "Fri Oct 10 12:58:29 2025",
+        "residual": 0.00346386177,
+        "residualPassed": true
+      },
+      {
+        "tv": "WRC12L2R2o",
+        "N": 10000,
+        "NB": 128,
+        "P": 8,
+        "Q": 16,
+        "timeSec": 4.41,
+        "gflops": 151.3,
+        "startTime": "Fri Oct 10 12:58:29 2025",
+        "endTime": "Fri Oct 10 12:58:34 2025",
+        "residual": 0.00372988033,
+        "residualPassed": true
+      },
+      {
+        "tv": "WRC12L2R4o",
+        "N": 10000,
+        "NB": 128,
+        "P": 8,
+        "Q": 16,
+        "timeSec": 4.45,
+        "gflops": 150,
+        "startTime": "Fri Oct 10 12:58:34 2025",
+        "endTime": "Fri Oct 10 12:58:38 2025",
+        "residual": 0.00346386177,
+        "residualPassed": true
+      },
+      {
+        "tv": "WRC12C2L2o",
+        "N": 10000,
+        "NB": 128,
+        "P": 8,
+        "Q": 16,
+        "timeSec": 4.46,
+        "gflops": 149.53,
+        "startTime": "Fri Oct 10 12:58:38 2025",
+        "endTime": "Fri Oct 10 12:58:43 2025",
+        "residual": 0.00372988033,
+        "residualPassed": true
+      },
+      {
+        "tv": "WRC12C2L4o",
+        "N": 10000,
+        "NB": 128,
+        "P": 8,
+        "Q": 16,
+        "timeSec": 4.58,
+        "gflops": 145.69,
+        "startTime": "Fri Oct 10 12:58:43 2025",
+        "endTime": "Fri Oct 10 12:58:47 2025",
+        "residual": 0.00336825074,
+        "residualPassed": true
+      },
+      {
+        "tv": "WRC12C2C2o",
+        "N": 10000,
+        "NB": 128,
+        "P": 8,
+        "Q": 16,
+        "timeSec": 4.47,
+        "gflops": 149.28,
+        "startTime": "Fri Oct 10 12:58:47 2025",
+        "endTime": "Fri Oct 10 12:58:52 2025",
+        "residual": 0.00372988033,
+        "residualPassed": true
+      },
+      {
+        "tv": "WRC12C2C4o",
+        "N": 10000,
+        "NB": 128,
+        "P": 8,
+        "Q": 16,
+        "timeSec": 4.42,
+        "gflops": 150.93,
+        "startTime": "Fri Oct 10 12:58:52 2025",
+        "endTime": "Fri Oct 10 12:58:56 2025",
+        "residual": 0.00346386177,
+        "residualPassed": true
+      },
+      {
+        "tv": "WRC12C2R2o",
+        "N": 10000,
+        "NB": 128,
+        "P": 8,
+        "Q": 16,
+        "timeSec": 4.36,
+        "gflops": 152.78,
+        "startTime": "Fri Oct 10 12:58:56 2025",
+        "endTime": "Fri Oct 10 12:59:01 2025",
+        "residual": 0.00372988033,
+        "residualPassed": true
+      },
+      {
+        "tv": "WRC12C2R4o",
+        "N": 10000,
+        "NB": 128,
+        "P": 8,
+        "Q": 16,
+        "timeSec": 4.49,
+        "gflops": 148.46,
+        "startTime": "Fri Oct 10 12:59:01 2025",
+        "endTime": "Fri Oct 10 12:59:05 2025",
+        "residual": 0.00346386177,
+        "residualPassed": true
+      },
+      {
+        "tv": "WRC12R2L2o",
+        "N": 10000,
+        "NB": 128,
+        "P": 8,
+        "Q": 16,
+        "timeSec": 4.43,
+        "gflops": 150.37,
+        "startTime": "Fri Oct 10 12:59:05 2025",
+        "endTime": "Fri Oct 10 12:59:10 2025",
+        "residual": 0.00372988033,
+        "residualPassed": true
+      },
+      {
+        "tv": "WRC12R2L4o",
+        "N": 10000,
+        "NB": 128,
+        "P": 8,
+        "Q": 16,
+        "timeSec": 4.37,
+        "gflops": 152.48,
+        "startTime": "Fri Oct 10 12:59:10 2025",
+        "endTime": "Fri Oct 10 12:59:14 2025",
+        "residual": 0.00336825074,
+        "residualPassed": true
+      },
+      {
+        "tv": "WRC12R2C2o",
+        "N": 10000,
+        "NB": 128,
+        "P": 8,
+        "Q": 16,
+        "timeSec": 4.6,
+        "gflops": 144.82,
+        "startTime": "Fri Oct 10 12:59:14 2025",
+        "endTime": "Fri Oct 10 12:59:19 2025",
+        "residual": 0.00372988033,
+        "residualPassed": true
+      },
+      {
+        "tv": "WRC12R2C4o",
+        "N": 10000,
+        "NB": 128,
+        "P": 8,
+        "Q": 16,
+        "timeSec": 4.55,
+        "gflops": 146.69,
+        "startTime": "Fri Oct 10 12:59:19 2025",
+        "endTime": "Fri Oct 10 12:59:23 2025",
+        "residual": 0.00346386177,
+        "residualPassed": true
+      },
+      {
+        "tv": "WRC12R2R2o",
+        "N": 10000,
+        "NB": 128,
+        "P": 8,
+        "Q": 16,
+        "timeSec": 4.38,
+        "gflops": 152.25,
+        "startTime": "Fri Oct 10 12:59:23 2025",
+        "endTime": "Fri Oct 10 12:59:28 2025",
+        "residual": 0.00372988033,
+        "residualPassed": true
+      },
+      {
+        "tv": "WRC12R2R4o",
+        "N": 10000,
+        "NB": 128,
+        "P": 8,
+        "Q": 16,
+        "timeSec": 4.49,
+        "gflops": 148.64,
+        "startTime": "Fri Oct 10 12:59:28 2025",
+        "endTime": "Fri Oct 10 12:59:32 2025",
+        "residual": 0.00346386177,
+        "residualPassed": true
+      }
+    ],
+    "summary": {
+      "testsTotal": 18,
+      "testsPassed": 18,
+      "testsFailed": 0,
+      "testsSkipped": 0
+    }
+  },
+  "err": null,
+  "best": {
+    "gflops": 152.78,
+    "N": 10000,
+    "NB": 128,
+    "timeSec": 4.36
+  }
+}
