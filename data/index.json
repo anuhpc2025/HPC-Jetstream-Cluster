@@ -1,6 +1,25 @@
 {
-  "generatedAt": "2025-10-10T22:33:20.921Z",
+  "generatedAt": "2025-10-16T23:09:22.469Z",
   "runs": [
+    {
+      "id": "HPL/Daniel/17-10-1",
+      "suite": "HPL",
+      "group": "Daniel",
+      "run": "17-10-1",
+      "best": {
+        "gflops": 2544.1,
+        "N": 100000,
+        "NB": 192,
+        "timeSec": 262.05
+      },
+      "outSummary": {
+        "testsTotal": 3,
+        "testsPassed": 3,
+        "testsFailed": 0,
+        "testsSkipped": 0
+      },
+      "hasErr": false
+    },
     {
       "id": "HPL/Sithum/10-10 - 0 1",
       "suite": "HPL",
