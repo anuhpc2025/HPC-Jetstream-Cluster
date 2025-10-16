@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-10-16T23:09:22.469Z",
+  "generatedAt": "2025-10-16T23:33:19.364Z",
   "runs": [
     {
       "id": "HPL/Daniel/17-10-1",
@@ -15,6 +15,25 @@
       "outSummary": {
         "testsTotal": 3,
         "testsPassed": 3,
+        "testsFailed": 0,
+        "testsSkipped": 0
+      },
+      "hasErr": false
+    },
+    {
+      "id": "HPL/Daniel/17-10-2",
+      "suite": "HPL",
+      "group": "Daniel",
+      "run": "17-10-2",
+      "best": {
+        "gflops": 2542.5,
+        "N": 100000,
+        "NB": 192,
+        "timeSec": 262.21
+      },
+      "outSummary": {
+        "testsTotal": 1,
+        "testsPassed": 1,
         "testsFailed": 0,
         "testsSkipped": 0
       },
