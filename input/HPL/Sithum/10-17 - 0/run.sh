@@ -1,10 +1,10 @@
 #!/bin/bash
 #SBATCH --job-name=hpl-test       # Job name
-#SBATCH --ntasks=192              # Total MPI tasks
+#SBATCH --ntasks=256              # Total MPI tasks
 #SBATCH --ntasks-per-node=64       # MPI tasks per node
 #SBATCH --cpus-per-task=1         # CPU cores per MPI task
 #SBATCH --time=01:00:00           # Time limit hh:mm:ss
-#SBATCH --nodes=3                 # Number of nodes
+#SBATCH --nodes=4                 # Number of nodes
 
 # MPI settings (Ethernet)
 export OMPI_MCA_btl=self,vader,tcp
