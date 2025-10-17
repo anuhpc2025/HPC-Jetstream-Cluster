@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-10-17T02:46:20.707Z",
+  "generatedAt": "2025-10-17T02:54:50.996Z",
   "runs": [
     {
       "id": "HPL/Daniel/17-10-1",
@@ -363,15 +363,6 @@
         "testsSkipped": 0
       },
       "hasErr": true
-    },
-    {
-      "id": "HPL/Sithum/10-17 - 0",
-      "suite": "HPL",
-      "group": "Sithum",
-      "run": "10-17 - 0",
-      "best": null,
-      "outSummary": null,
-      "hasErr": false
     }
   ]
 }
