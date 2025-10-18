@@ -6,6 +6,9 @@
 #SBATCH --time=01:00:00           # Time limit hh:mm:ss
 #SBATCH --nodes=4                 # Number of nodes
 
+export PATH=/opt/openmpi-4.1.6/bin:$PATH
+export LD_LIBRARY_PATH=/opt/openmpi-4.1.6/lib:$LD_LIBRARY_PATH
+
 # MPI settings (Ethernet)
 export OMPI_MCA_btl=self,vader,tcp
 export OMPI_MCA_btl_tcp_if_include=enp1s0
