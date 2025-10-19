@@ -1,0 +1,2 @@
+sudo: you do not exist in the passwd database
+/var/spool/slurmd/job00035/slurm_script: line 45: /proc/sys/vm/compact_memory: Permission denied
