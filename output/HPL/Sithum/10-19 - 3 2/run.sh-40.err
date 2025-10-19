@@ -1,0 +1,7 @@
+[anu-hpc-2025-worker-node-1:280599] tcp_peer_recv_connect_ack: invalid header type: 213
+[anu-hpc-2025-worker-node-1:280599] tcp_peer_recv_connect_ack: invalid header type: 50
+[anu-hpc-2025-worker-node-1:280599] tcp_peer_recv_connect_ack: invalid header type: 5
+[anu-hpc-2025-worker-node-1:280599] tcp_peer_recv_connect_ack: invalid header type: 0
+[anu-hpc-2025-worker-node-1:280599] tcp_peer_recv_connect_ack: invalid header type: 32
+[anu-hpc-2025-worker-node-1:280599] tcp_peer_recv_connect_ack: invalid header type: 0
+[anu-hpc-2025-worker-node-1:280599] tcp_peer_recv_connect_ack: invalid header type: 0
