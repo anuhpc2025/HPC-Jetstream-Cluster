@@ -82,30 +82,46 @@
   },
   "job": {
     "filename": "run.sh",
-    "raw": "#!/bin/bash\n#SBATCH --job-name=hpl-test       # Job name\n#SBATCH --ntasks=256              # Total MPI tasks\n#SBATCH --ntasks-per-node=64       # MPI tasks per node\n#SBATCH --cpus-per-task=1         # CPU cores per MPI task\n#SBATCH --time=24:00:00           # Time limit hh:mm:ss\n#SBATCH --nodes=4                 # Number of nodes\n\nexport PATH=/opt/openmpi-4.1.6/bin:$PATH\nexport LD_LIBRARY_PATH=/opt/openmpi-4.1.6/lib:$LD_LIBRARY_PATH\n\n# MPI settings (Ethernet)\nexport OMPI_MCA_btl=self,vader,tcp\nexport OMPI_MCA_btl_tcp_if_include=enp1s0\nexport OMPI_MCA_oob_tcp_if_include=enp1s0\nexport OMPI_MCA_pml=ob1\n\n# Collective tuning\nexport OMPI_MCA_coll_tuned_use_dynamic_rules=1\nexport OMPI_MCA_coll_tuned_bcast_algorithm=4\nexport OMPI_MCA_coll_tuned_allreduce_algorithm=6\n\n# SLURM Integration\nexport OMPI_MCA_plm=slurm\nexport OMPI_MCA_orte_launch=slurm\n\n# Thread binding and OpenMP\nexport OMP_NUM_THREADS=1\nexport OMP_PROC_BIND=close\nexport OMP_PLACES=cores\n\n# Memory and file limits\nulimit -l unlimited\nulimit -n 65536\n\n# Run the MPI program\nmpirun ./xhpl",
+    "raw": "#!/bin/bash\n#SBATCH --job-name=hpl-test       # Job name\n#SBATCH --ntasks=256              # Total MPI tasks\n#SBATCH --ntasks-per-node=64       # MPI tasks per node\n#SBATCH --cpus-per-task=1         # CPU cores per MPI task\n#SBATCH --time=01:30:00           # Time limit hh:mm:ss\n#SBATCH --nodes=4                 # Number of nodes\n\nexport PATH=/opt/openmpi-4.1.6/bin:$PATH\nexport LD_LIBRARY_PATH=/opt/openmpi-4.1.6/lib:$LD_LIBRARY_PATH\n\n# MPI settings (Ethernet)\nexport OMPI_MCA_btl=self,vader,tcp\nexport OMPI_MCA_btl_tcp_if_include=enp1s0\nexport OMPI_MCA_oob_tcp_if_include=enp1s0\nexport OMPI_MCA_pml=ob1\n\n# Collective tuning\nexport OMPI_MCA_coll_tuned_use_dynamic_rules=1\nexport OMPI_MCA_coll_tuned_bcast_algorithm=4\nexport OMPI_MCA_coll_tuned_allreduce_algorithm=6\n\n# SLURM Integration\nexport OMPI_MCA_plm=slurm\nexport OMPI_MCA_orte_launch=slurm\n\n# Thread binding and OpenMP\nexport OMP_NUM_THREADS=1\nexport OMP_PROC_BIND=close\nexport OMP_PLACES=cores\n\n# Memory and file limits\nulimit -l unlimited\nulimit -n 65536\n\n# Run the MPI program\nmpirun ./xhpl",
     "sbatch": {
       "job-name": "hpl-test       # Job name",
       "ntasks": null,
       "ntasks-per-node": null,
       "cpus-per-task": null,
-      "time": "24:00:00           # Time limit hh:mm:ss",
+      "time": "01:30:00           # Time limit hh:mm:ss",
       "nodes": null
     },
     "path": "/raw/HPL/Sithum/10-19 - 4 0/run.sh"
   },
   "out": {
-    "path": "/raw/HPL/Sithum/10-19 - 4 0/run.sh-41.out",
-    "runs": [],
+    "path": "/raw/HPL/Sithum/10-19 - 4 0/run.sh-55.out",
+    "runs": [
+      {
+        "tv": "WRC11C2R4o",
+        "N": 340000,
+        "NB": 192,
+        "P": 16,
+        "Q": 16,
+        "timeSec": 4611.24,
+        "gflops": 5682.4,
+        "startTime": "Mon Oct 20 01:38:57 2025",
+        "endTime": "Mon Oct 20 02:55:49 2025",
+        "residual": 0.0018250036,
+        "residualPassed": true
+      }
+    ],
     "summary": {
-      "testsTotal": null,
-      "testsPassed": null,
-      "testsFailed": null,
-      "testsSkipped": null
+      "testsTotal": 1,
+      "testsPassed": 1,
+      "testsFailed": 0,
+      "testsSkipped": 0
     }
   },
-  "err": {
-    "path": "/raw/HPL/Sithum/10-19 - 4 0/run.sh-41.err",
-    "size": 5777
-  },
-  "best": null
+  "err": null,
+  "best": {
+    "gflops": 5682.4,
+    "N": 340000,
+    "NB": 192,
+    "timeSec": 4611.24
+  }
 }
