@@ -1,0 +1,2 @@
+[anu-hpc-2025-worker-node-1][[1851,1],2][btl_tcp.c:559:mca_btl_tcp_recv_blocking] recv(64) failed: Connection reset by peer (104)
+slurmstepd-anu-hpc-2025-worker-node-1: error: *** JOB 63 ON anu-hpc-2025-worker-node-1 CANCELLED AT 2025-10-20T13:33:42 DUE TO TIME LIMIT ***
