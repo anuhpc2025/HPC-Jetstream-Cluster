@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-10-21T07:15:58.043Z",
+  "generatedAt": "2025-10-22T02:44:52.680Z",
   "runs": [
     {
       "id": "HPL/Daniel/17-10-1",
@@ -1090,7 +1090,7 @@
         "testsFailed": 0,
         "testsSkipped": 0
       },
-      "hasErr": true
+      "hasErr": false
     },
     {
       "id": "HPL/Sithum/10-21 - 1 1",
@@ -1109,7 +1109,7 @@
         "testsFailed": 0,
         "testsSkipped": 0
       },
-      "hasErr": true
+      "hasErr": false
     }
   ]
 }
