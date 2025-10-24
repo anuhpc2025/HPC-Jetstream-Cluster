@@ -1,6 +1,25 @@
 {
-  "generatedAt": "2025-10-24T03:02:53.558Z",
+  "generatedAt": "2025-10-24T03:36:47.924Z",
   "runs": [
+    {
+      "id": "HPL/Beno/10-24 - 1 1",
+      "suite": "HPL",
+      "group": "Beno",
+      "run": "10-24 - 1 1",
+      "best": {
+        "gflops": 4603.8,
+        "N": 240000,
+        "NB": 240,
+        "timeSec": 2001.85
+      },
+      "outSummary": {
+        "testsTotal": 1,
+        "testsPassed": 1,
+        "testsFailed": 0,
+        "testsSkipped": 0
+      },
+      "hasErr": true
+    },
     {
       "id": "HPL/Daniel/17-10-1",
       "suite": "HPL",
