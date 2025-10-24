@@ -10,17 +10,29 @@
 # Load MPI module (adjust for your system)
 # module load openmpi
 
-# Load HPCX
-source ~/.bashrc
-export HPCX_HOME=/home/hpc/hpcx/hpcx-v2.24-gcc-doca_ofed-ubuntu24.04-cuda13-x86_64
-export LD_LIBRARY_PATH=$HPCX_HOME/ucx/lib:$HPCX_HOME/ompi/lib:$LD_LIBRARY_PATH
-export PATH=$HPCX_HOME/ompi/bin:$PATH
-source $HPCX_HOME/hpcx-init.sh
-hpcx_load
+unset OMPI_MCA_osc
+
+export PATH=/opt/openmpi-4.1.6/bin:$PATH
+export LD_LIBRARY_PATH=/opt/openmpi-4.1.6/lib:$LD_LIBRARY_PATH
 
 # === AOCL BLIS ===
 export AOCLROOT=/opt/AMD/aocl-5.1.0/5.1.0/gcc
 export LD_LIBRARY_PATH=${AOCLROOT}/lib:$LD_LIBRARY_PATH
+
+# MPI settings (Ethernet)
+export OMPI_MCA_btl=self,vader,tcp
+export OMPI_MCA_btl_tcp_if_include=enp1s0
+export OMPI_MCA_oob_tcp_if_include=enp1s0
+export OMPI_MCA_pml=ob1
+
+# Collective tuning
+export OMPI_MCA_coll_tuned_use_dynamic_rules=1
+export OMPI_MCA_coll_tuned_bcast_algorithm=4
+export OMPI_MCA_coll_tuned_allreduce_algorithm=6
+
+# SLURM Integration
+export OMPI_MCA_plm=slurm
+export OMPI_MCA_orte_launch=slurm
 
 export OMP_NUM_THREADS=1
 export OMP_PROC_BIND=true
@@ -28,17 +40,6 @@ export OMP_PLACES=cores
 export BLIS_ENABLE_OPENMP=1
 export BLIS_CPU_EXT=ZEN3        
 export BLIS_DYNAMIC_SCHED=0
-
-# ---- NCCL choice: use system 2.27.7 ----
-unset LD_PRELOAD
-export LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu:$LD_LIBRARY_PATH
-
-
-# Optional: add CUDA & other NVIDIA libs, but *not* /opt/.../lib/nccl
-export LD_LIBRARY_PATH=/opt/nvidia/nvidia_hpc_benchmarks_openmpi/lib/omp:$LD_LIBRARY_PATH
-export LD_LIBRARY_PATH=/usr/local/cuda-12.6/lib64:/opt/nvidia/nvidia_hpc_benchmarks_openmpi/lib:$LD_LIBRARY_PATH
-export LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu/nvshmem/12:$LD_LIBRARY_PATH
-
 
 # OMPI / UCX tuning
 export UCX_TLS=rc_x,sm,self
@@ -60,3 +61,4 @@ mpirun \
   -x OMPI_MCA_pml -x OMPI_MCA_osc -x OMPI_MCA_btl \
   -x UCX_TLS -x UCX_NET_DEVICES \
   ./xhpl
+  
