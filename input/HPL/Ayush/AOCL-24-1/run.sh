@@ -52,13 +52,15 @@ export UCX_IB_PCI_RELAXED_ORDERING=on
 ulimit -l unlimited
 ulimit -n 65536
 
+# Flush any pending writes
+sync
+
+# Drop caches
+echo 3 | sudo tee /proc/sys/vm/drop_caches >/dev/null
+
+# Forces memory compaction
+echo 1 > /proc/sys/vm/compact_memory
+
 # Run the MPI program
-mpirun \
-  --map-by ppr:32:node:PE=1 --rank-by core --bind-to core --report-bindings \
-  -x LD_LIBRARY_PATH -x PATH \
-  -x AOCLROOT -x OMP_NUM_THREADS -x OMP_PROC_BIND -x OMP_PLACES \
-  -x BLIS_ENABLE_OPENMP -x BLIS_CPU_EXT -x BLIS_DYNAMIC_SCHED \
-  -x OMPI_MCA_pml -x OMPI_MCA_osc -x OMPI_MCA_btl \
-  -x UCX_TLS -x UCX_NET_DEVICES \
-  ./xhpl
+mpirun ./xhpl
   
