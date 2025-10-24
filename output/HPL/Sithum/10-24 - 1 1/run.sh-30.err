@@ -1,0 +1,6 @@
+==> Error: [Errno 13] Permission denied: '/home/github'
+[1;31m==>[0m Error: [Errno 13] Permission denied: '/home/github'
+[1;31m==>[0m Error: [Errno 13] Permission denied: '/home/github'
+sudo: you do not exist in the passwd database
+/var/spool/slurmd/job00030/slurm_script: line 55: /proc/sys/vm/compact_memory: Permission denied
+/var/spool/slurmd/job00030/slurm_script: line 58: mpirun: command not found
