@@ -1,0 +1,6 @@
+--------------------------------------------------------------------------
+The specified rank-by directive is not recognized:
+  Directive: core
+  Valid directives: slot:node:fill:span
+Please check for a typo or ensure that the directive is a supported one.
+--------------------------------------------------------------------------
