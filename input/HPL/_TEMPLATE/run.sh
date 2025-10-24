@@ -3,16 +3,25 @@
 #SBATCH --ntasks=256              # Total MPI tasks
 #SBATCH --ntasks-per-node=64       # MPI tasks per node
 #SBATCH --cpus-per-task=1         # CPU cores per MPI task
-#SBATCH --time=01:00:00           # Time limit hh:mm:ss
+#SBATCH --time=24:00:00           # Time limit hh:mm:ss
 #SBATCH --nodes=4                 # Number of nodes
 
-export PATH=/opt/openmpi-4.1.6/bin:$PATH
-export LD_LIBRARY_PATH=/opt/openmpi-4.1.6/lib:$LD_LIBRARY_PATH
+export SPACK_USER_CONFIG_PATH=/tmp/spack-config
+export SPACK_USER_CACHE_PATH=/tmp/spack-cache
+
+export SPACK_ROOT=/opt/spack
+source ${SPACK_ROOT}/share/spack/setup-env.sh
+
+# Load OpenMPI explicitly by hash
+spack load /buou2hh
+spack load hpl %aocc
+
+unset OMPI_MCA_osc
 
 # MPI settings (Ethernet)
 export OMPI_MCA_btl=self,vader,tcp
-export OMPI_MCA_btl_tcp_if_include=enp1s0
-export OMPI_MCA_oob_tcp_if_include=enp1s0
+export OMPI_MCA_btl_tcp_if_include=eth0
+export OMPI_MCA_oob_tcp_if_include=eth0
 export OMPI_MCA_pml=ob1
 
 # Collective tuning
@@ -29,9 +38,23 @@ export OMP_NUM_THREADS=1
 export OMP_PROC_BIND=close
 export OMP_PLACES=cores
 
+# amdblis (BLAS layer) optimizations
+export BLIS_JC_NT=1  # (No outer loop parallelization)
+export BLIS_IC_NT=$OMP_NUM_THREADS # (# of 2nd level threads – one per core in the shared L3 cache domain):
+export BLIS_JR_NT=1 # (No 4th level threads)
+export BLIS_IR_NT=1 # (No 5th level threads
+
+export BLIS_NUM_THREADS=1
+
+export OMPI_MCA_hwloc_base_binding_policy=core
+export OMPI_MCA_hwloc_base_use_hwthreads_as_cpus=0
+
 # Memory and file limits
 ulimit -l unlimited
 ulimit -n 65536
 
+# Flush any pending writes
+sync
+
 # Run the MPI program
-mpirun ./xhpl
+mpirun $(spack location -i hpl)/bin/xhpl
