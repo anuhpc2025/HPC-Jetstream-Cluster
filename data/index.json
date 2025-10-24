@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-10-24T01:14:16.781Z",
+  "generatedAt": "2025-10-24T03:02:53.558Z",
   "runs": [
     {
       "id": "HPL/Daniel/17-10-1",
@@ -1168,6 +1168,44 @@
         "N": 10000,
         "NB": 384,
         "timeSec": 4.45
+      },
+      "outSummary": {
+        "testsTotal": 1,
+        "testsPassed": 1,
+        "testsFailed": 0,
+        "testsSkipped": 0
+      },
+      "hasErr": true
+    },
+    {
+      "id": "HPL/Sithum/10-24 - 3 0",
+      "suite": "HPL",
+      "group": "Sithum",
+      "run": "10-24 - 3 0",
+      "best": {
+        "gflops": 5602.1,
+        "N": 300000,
+        "NB": 384,
+        "timeSec": 3213.13
+      },
+      "outSummary": {
+        "testsTotal": 1,
+        "testsPassed": 1,
+        "testsFailed": 0,
+        "testsSkipped": 0
+      },
+      "hasErr": true
+    },
+    {
+      "id": "HPL/Sithum/10-24 - 3 1",
+      "suite": "HPL",
+      "group": "Sithum",
+      "run": "10-24 - 3 1",
+      "best": {
+        "gflops": 5722.1,
+        "N": 300000,
+        "NB": 384,
+        "timeSec": 3145.73
       },
       "outSummary": {
         "testsTotal": 1,
