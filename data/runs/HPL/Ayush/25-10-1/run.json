@@ -1,0 +1,130 @@
+{
+  "id": "HPL/Ayush/25-10-1",
+  "suite": "HPL",
+  "group": "Ayush",
+  "run": "25-10-1",
+  "dat": {
+    "raw": "HPLinpack benchmark input file\nCustom quick test\nHPL.out      output file name (if any)\n6            device out (6=stdout,7=stderr,file)\n1            # of problems sizes (N)\n329280       Ns\n1            # of NBs\n192          NBs\n0            PMAP process mapping (0=Row-,1=Column-major)\n1            # of process grids (P x Q)\n16            Ps\n16           Qs\n16.0         threshold\n1            # of panel fact\n0            PFACTs (0=left, 1=Crout, 2=Right)\n1            # of recursive stopping criterium\n2            NBMINs (>= 1)\n1            # of panels in recursion\n2            NDIVs\n1            # of recursive panel fact.\n0            RFACTs (0=left, 1=Crout, 2=Right)\n1            # of broadcast\n2            BCASTs (0=1rg,1=1rM,2=2rg,3=2rM,4=Lng,5=LnM)\n1            # of lookahead depth\n1            DEPTHs (>=0)\n2            SWAP (0=bin-exch,1=long,2=mix)\n64           swapping threshold\n0            L1 in (0=transposed,1=no-transposed) form\n0            U  in (0=transposed,1=no-transposed) form\n1            Equilibration (0=no,1=yes)\n8            memory alignment in double (> 0)",
+    "parsed": {
+      "header": [
+        "HPLinpack benchmark input file",
+        "Custom quick test"
+      ],
+      "outputFilename": "HPL.out",
+      "deviceOut": 6,
+      "numProblemSizes": 1,
+      "Ns": [
+        329280
+      ],
+      "numNBs": 1,
+      "NBs": [
+        192
+      ],
+      "pmap": 0,
+      "numGrids": 1,
+      "Ps": [
+        16
+      ],
+      "Qs": [
+        16
+      ],
+      "threshold": 16,
+      "numPFACT": 1,
+      "PFACTs": [
+        0,
+        0,
+        1,
+        2
+      ],
+      "numNBMIN": 1,
+      "NBMINs": [
+        2,
+        1
+      ],
+      "numPanelsInRecursion": 1,
+      "NDIVs": [
+        2
+      ],
+      "numRFACT": 1,
+      "RFACTs": [
+        0,
+        0,
+        1,
+        2
+      ],
+      "numBCAST": 1,
+      "BCASTs": [
+        2,
+        0,
+        1,
+        1,
+        1,
+        2,
+        2,
+        3,
+        2,
+        4,
+        5
+      ],
+      "numDEPTH": 1,
+      "DEPTHs": [
+        1,
+        0
+      ],
+      "swapMode": 2,
+      "swapThreshold": 64,
+      "L1": 0,
+      "U": 0,
+      "equilibration": 1,
+      "memoryAlignment": 8
+    },
+    "path": "/raw/HPL/Ayush/25-10-1/HPL.dat"
+  },
+  "job": {
+    "filename": "run.sh",
+    "raw": "#!/bin/bash\n#SBATCH --job-name=hpl-test       # Job name\n#SBATCH --ntasks=256              # Total MPI tasks\n#SBATCH --ntasks-per-node=64       # MPI tasks per node\n#SBATCH --cpus-per-task=1         # CPU cores per MPI task\n#SBATCH --time=24:00:00           # Time limit hh:mm:ss\n#SBATCH --nodes=4                 # Number of nodes\n\nexport SPACK_USER_CONFIG_PATH=/tmp/spack-config\nexport SPACK_USER_CACHE_PATH=/tmp/spack-cache\n\nexport SPACK_ROOT=/opt/spack\nsource ${SPACK_ROOT}/share/spack/setup-env.sh\n\n# Load OpenMPI explicitly by hash\nspack load /buou2hh\nspack load hpl %aocc\n\nunset OMPI_MCA_osc\n\n# --- MPI transports (Ethernet) ---\nexport OMPI_MCA_btl=self,vader,tcp\nNETDEV=$(ip route get 1.1.1.1 | awk '{for(i=1;i<=NF;i++) if($i==\"dev\") {print $(i+1); exit}}')\nexport OMPI_MCA_btl_tcp_if_include=\"$NETDEV\"\nexport OMPI_MCA_oob_tcp_if_include=\"$NETDEV\"\nexport OMPI_MCA_pml=ob1         \n\n# --- Open MPI tuned collectives ---\nexport OMPI_MCA_coll_tuned_use_dynamic_rules=1\nexport OMPI_MCA_coll_tuned_bcast_algorithm=1   \nunset  OMPI_MCA_coll_tuned_allreduce_algorithm \n\n# --- Slurm integration ---\nexport OMPI_MCA_plm=slurm\nunset OMPI_MCA_orte_launch\n\n# Thread binding and OpenMP\nexport OMP_NUM_THREADS=1\nexport OMP_PROC_BIND=close\nexport OMP_PLACES=cores\n\n# --- OpenMP / AOCL-BLIS (single-threaded BLAS) ---\nexport OMP_NUM_THREADS=1\nexport OMP_PROC_BIND=close\nexport OMP_PLACES=cores\nexport OMP_MAX_ACTIVE_LEVELS=1\n\n\nexport BLIS_ARCH_TYPE=zen3        \nexport BLIS_ARCH_DEBUG=1          \nexport BLIS_NUM_THREADS=1        \nunset  BLIS_JC_NT BLIS_IC_NT BLIS_JR_NT BLIS_IR_NT  \n\nexport OMPI_MCA_hwloc_base_binding_policy=core\nexport OMPI_MCA_hwloc_base_use_hwthreads_as_cpus=0\n\n# Memory and file limits\nulimit -l unlimited\nulimit -n 65536\n\n# Flush any pending writes\nsync\n\n# Run the MPI program\nmpirun --bind-to core --map-by ppr:64:node:pe=1 --report-bindings \\\n  $(spack location -i hpl)/bin/xhpl",
+    "sbatch": {
+      "job-name": "hpl-test       # Job name",
+      "ntasks": null,
+      "ntasks-per-node": null,
+      "cpus-per-task": null,
+      "time": "24:00:00           # Time limit hh:mm:ss",
+      "nodes": null
+    },
+    "path": "/raw/HPL/Ayush/25-10-1/run.sh"
+  },
+  "out": {
+    "path": "/raw/HPL/Ayush/25-10-1/run.sh-53.out",
+    "runs": [
+      {
+        "tv": "WR12L2L2",
+        "N": 329280,
+        "NB": 192,
+        "P": 16,
+        "Q": 16,
+        "timeSec": 4308.56,
+        "gflops": 5524.3,
+        "startTime": "Fri Oct 24 14:19:13 2025",
+        "endTime": "Fri Oct 24 15:31:02 2025",
+        "residual": 0.00161096378,
+        "residualPassed": true
+      }
+    ],
+    "summary": {
+      "testsTotal": 1,
+      "testsPassed": 1,
+      "testsFailed": 0,
+      "testsSkipped": 0
+    }
+  },
+  "err": {
+    "path": "/raw/HPL/Ayush/25-10-1/run.sh-53.err",
+    "size": 73026
+  },
+  "best": {
+    "gflops": 5524.3,
+    "N": 329280,
+    "NB": 192,
+    "timeSec": 4308.56
+  }
+}
