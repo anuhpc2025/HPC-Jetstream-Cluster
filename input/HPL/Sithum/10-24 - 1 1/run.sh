@@ -38,6 +38,12 @@ export OMP_NUM_THREADS=1
 export OMP_PROC_BIND=close
 export OMP_PLACES=cores
 
+# amdblis (BLAS layer) optimizations
+export BLIS_JC_NT=1  # (No outer loop parallelization)
+export BLIS_IC_NT=$OMP_NUM_THREADS # (# of 2nd level threads – one per core in the shared L3 cache domain):
+export BLIS_JR_NT=1 # (No 4th level threads)
+export BLIS_IR_NT=1 # (No 5th level threads)
+
 # Memory and file limits
 ulimit -l unlimited
 ulimit -n 65536
@@ -52,4 +58,4 @@ echo 3 | sudo tee /proc/sys/vm/drop_caches >/dev/null
 echo 1 > /proc/sys/vm/compact_memory
 
 # Run the MPI program
-mpirun Xhpl
+mpirun $(spack location -i hpl)/bin/xhpl
