@@ -9,13 +9,11 @@
 export SPACK_ROOT=/opt/spack
 source ${SPACK_ROOT}/share/spack/setup-env.sh
 
-spack load openmpi
+# Load OpenMPI explicitly by hash
+spack load /buou2hh
 spack load hpl %aocc
 
 unset OMPI_MCA_osc
-
-export PATH=/opt/openmpi-4.1.6/bin:$PATH
-export LD_LIBRARY_PATH=/opt/openmpi-4.1.6/lib:$LD_LIBRARY_PATH
 
 # MPI settings (Ethernet)
 export OMPI_MCA_btl=self,vader,tcp
@@ -36,12 +34,6 @@ export OMPI_MCA_orte_launch=slurm
 export OMP_NUM_THREADS=1
 export OMP_PROC_BIND=close
 export OMP_PLACES=cores
-
-# amdblis (BLAS layer) optimizations
-export BLIS_JC_NT=1  # (No outer loop parallelization)
-export BLIS_IC_NT=$OMP_NUM_THREADS # (# of 2nd level threads – one per core in the shared L3 cache domain):
-export BLIS_JR_NT=1 # (No 4th level threads)
-export BLIS_IR_NT=1 # (No 5th level threads)
 
 # Memory and file limits
 ulimit -l unlimited
