@@ -6,6 +6,9 @@
 #SBATCH --time=24:00:00           # Time limit hh:mm:ss
 #SBATCH --nodes=4                 # Number of nodes
 
+export SPACK_USER_CONFIG_PATH=/tmp/spack-config
+export SPACK_USER_CACHE_PATH=/tmp/spack-cache
+
 export SPACK_ROOT=/opt/spack
 source ${SPACK_ROOT}/share/spack/setup-env.sh
 
@@ -34,12 +37,6 @@ export OMPI_MCA_orte_launch=slurm
 export OMP_NUM_THREADS=1
 export OMP_PROC_BIND=close
 export OMP_PLACES=cores
-
-# amdblis (BLAS layer) optimizations
-export BLIS_JC_NT=1  # (No outer loop parallelization)
-export BLIS_IC_NT=$OMP_NUM_THREADS # (# of 2nd level threads – one per core in the shared L3 cache domain):
-export BLIS_JR_NT=1 # (No 4th level threads)
-export BLIS_IR_NT=1 # (No 5th level threads)
 
 # Memory and file limits
 ulimit -l unlimited
