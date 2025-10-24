@@ -6,6 +6,10 @@
 #SBATCH --time=24:00:00           # Time limit hh:mm:ss
 #SBATCH --nodes=4                 # Number of nodes
 
+export SPACK_ROOT=/opt/spack
+source ${SPACK_ROOT}/share/spack/setup-env.sh
+
+spack load openmpi
 spack load hpl %aocc
 
 unset OMPI_MCA_osc
