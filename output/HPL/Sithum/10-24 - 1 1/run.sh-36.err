@@ -1,0 +1,237 @@
+sudo: you do not exist in the passwd database
+/var/spool/slurmd/job00036/slurm_script: line 58: /proc/sys/vm/compact_memory: Permission denied
+[anu-hpc-2025-worker-node-1:1153896:0:1153896] Caught signal 11 (Segmentation fault: invalid permissions for mapped object at address 0x555555559088)
+[anu-hpc-2025-worker-node-1:1153916:0:1153916] Caught signal 11 (Segmentation fault: invalid permissions for mapped object at address 0x555555559088)
+[anu-hpc-2025-worker-node-1:1153893:0:1153893] Caught signal 11 (Segmentation fault: invalid permissions for mapped object at address 0x555555559088)
+[anu-hpc-2025-worker-node-1:1153926:0:1153926] Caught signal 11 (Segmentation fault: invalid permissions for mapped object at address 0x555555559088)
+[anu-hpc-2025-worker-node-1:1153919:0:1153919] Caught signal 11 (Segmentation fault: invalid permissions for mapped object at address 0x555555559088)
+[anu-hpc-2025-worker-node-1:1153895:0:1153895] Caught signal 11 (Segmentation fault: invalid permissions for mapped object at address 0x555555559088)
+[anu-hpc-2025-worker-node-1:1153894:0:1153894] Caught signal 11 (Segmentation fault: invalid permissions for mapped object at address 0x555555559088)
+[anu-hpc-2025-worker-node-1:1153928:0:1153928] Caught signal 11 (Segmentation fault: invalid permissions for mapped object at address 0x555555559088)
+[anu-hpc-2025-worker-node-1:1153921:0:1153921] Caught signal 11 (Segmentation fault: invalid permissions for mapped object at address 0x555555559088)
+[anu-hpc-2025-worker-node-1:1153948:0:1153948] Caught signal 11 (Segmentation fault: invalid permissions for mapped object at address 0x555555559088)
+[anu-hpc-2025-worker-node-1:1153950:0:1153950] Caught signal 11 (Segmentation fault: invalid permissions for mapped object at address 0x555555559088)
+[anu-hpc-2025-worker-node-1:1153899:0:1153899] Caught signal 11 (Segmentation fault: invalid permissions for mapped object at address 0x555555559088)
+[anu-hpc-2025-worker-node-1:1153902:0:1153902] Caught signal 11 (Segmentation fault: invalid permissions for mapped object at address 0x555555559088)
+[anu-hpc-2025-worker-node-1:1153917:0:1153917] Caught signal 11 (Segmentation fault: invalid permissions for mapped object at address 0x555555559088)
+[anu-hpc-2025-worker-node-1:1153946:0:1153946] Caught signal 11 (Segmentation fault: invalid permissions for mapped object at address 0x555555559088)
+[anu-hpc-2025-worker-node-1:1153929:0:1153929] Caught signal 11 (Segmentation fault: invalid permissions for mapped object at address 0x555555559088)
+[anu-hpc-2025-worker-node-1:1153923:0:1153923] Caught signal 11 (Segmentation fault: invalid permissions for mapped object at address 0x555555559088)
+[anu-hpc-2025-worker-node-1:1153947:0:1153947] Caught signal 11 (Segmentation fault: invalid permissions for mapped object at address 0x555555559088)
+[anu-hpc-2025-worker-node-1:1153925:0:1153925] Caught signal 11 (Segmentation fault: invalid permissions for mapped object at address 0x555555559088)
+[anu-hpc-2025-worker-node-1:1153924:0:1153924] Caught signal 11 (Segmentation fault: invalid permissions for mapped object at address 0x555555559088)
+[anu-hpc-2025-worker-node-1:1153915:0:1153915] Caught signal 11 (Segmentation fault: invalid permissions for mapped object at address 0x555555559088)
+[anu-hpc-2025-worker-node-1:1153920:0:1153920] Caught signal 11 (Segmentation fault: invalid permissions for mapped object at address 0x555555559088)
+[anu-hpc-2025-worker-node-1:1153927:0:1153927] Caught signal 11 (Segmentation fault: invalid permissions for mapped object at address 0x555555559088)
+[anu-hpc-2025-worker-node-1:1153892:0:1153892] Caught signal 11 (Segmentation fault: invalid permissions for mapped object at address 0x555555559088)
+[anu-hpc-2025-worker-node-1:1153930:0:1153930] Caught signal 11 (Segmentation fault: invalid permissions for mapped object at address 0x555555559088)
+[anu-hpc-2025-worker-node-1:1153918:0:1153918] Caught signal 11 (Segmentation fault: invalid permissions for mapped object at address 0x555555559088)
+[anu-hpc-2025-worker-node-1:1153890:0:1153890] Caught signal 11 (Segmentation fault: invalid permissions for mapped object at address 0x555555559088)
+[anu-hpc-2025-worker-node-1:1153922:0:1153922] Caught signal 11 (Segmentation fault: invalid permissions for mapped object at address 0x555555559088)
+==== backtrace (tid:1153926) ====
+ 0  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(ucs_handle_error+0x294) [0x7ffff7e70524]
+ 1  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(+0x356f5) [0x7ffff7e706f5]
+ 2  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(+0x359ce) [0x7ffff7e709ce]
+ 3  /lib64/libc.so.6(+0x3ebf0) [0x7ffff643ebf0]
+ 4  /opt/spack/opt/spack/linux-zen3/hpl-2.3-7neuxucxckfvf6bfhushbzyzgyz5owfa/bin/xhpl(+0x5088) [0x555555559088]
+=================================
+==== backtrace (tid:1153946) ====
+ 0  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(ucs_handle_error+0x294) [0x7ffff7e70524]
+ 1  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(+0x356f5) [0x7ffff7e706f5]
+ 2  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(+0x359ce) [0x7ffff7e709ce]
+ 3  /lib64/libc.so.6(+0x3ebf0) [0x7ffff643ebf0]
+ 4  /opt/spack/opt/spack/linux-zen3/hpl-2.3-7neuxucxckfvf6bfhushbzyzgyz5owfa/bin/xhpl(+0x5088) [0x555555559088]
+=================================
+==== backtrace (tid:1153930) ====
+ 0  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(ucs_handle_error+0x294) [0x7ffff7e70524]
+ 1  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(+0x356f5) [0x7ffff7e706f5]
+ 2  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(+0x359ce) [0x7ffff7e709ce]
+ 3  /lib64/libc.so.6(+0x3ebf0) [0x7ffff643ebf0]
+ 4  /opt/spack/opt/spack/linux-zen3/hpl-2.3-7neuxucxckfvf6bfhushbzyzgyz5owfa/bin/xhpl(+0x5088) [0x555555559088]
+=================================
+==== backtrace (tid:1153895) ====
+ 0  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(ucs_handle_error+0x294) [0x7ffff7e70524]
+ 1  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(+0x356f5) [0x7ffff7e706f5]
+ 2  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(+0x359ce) [0x7ffff7e709ce]
+ 3  /lib64/libc.so.6(+0x3ebf0) [0x7ffff643ebf0]
+ 4  /opt/spack/opt/spack/linux-zen3/hpl-2.3-7neuxucxckfvf6bfhushbzyzgyz5owfa/bin/xhpl(+0x5088) [0x555555559088]
+=================================
+==== backtrace (tid:1153919) ====
+ 0  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(ucs_handle_error+0x294) [0x7ffff7e70524]
+ 1  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(+0x356f5) [0x7ffff7e706f5]
+ 2  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(+0x359ce) [0x7ffff7e709ce]
+ 3  /lib64/libc.so.6(+0x3ebf0) [0x7ffff643ebf0]
+ 4  /opt/spack/opt/spack/linux-zen3/hpl-2.3-7neuxucxckfvf6bfhushbzyzgyz5owfa/bin/xhpl(+0x5088) [0x555555559088]
+=================================
+==== backtrace (tid:1153929) ====
+ 0  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(ucs_handle_error+0x294) [0x7ffff7e70524]
+ 1  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(+0x356f5) [0x7ffff7e706f5]
+ 2  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(+0x359ce) [0x7ffff7e709ce]
+ 3  /lib64/libc.so.6(+0x3ebf0) [0x7ffff643ebf0]
+ 4  /opt/spack/opt/spack/linux-zen3/hpl-2.3-7neuxucxckfvf6bfhushbzyzgyz5owfa/bin/xhpl(+0x5088) [0x555555559088]
+=================================
+==== backtrace (tid:1153896) ====
+ 0  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(ucs_handle_error+0x294) [0x7ffff7e70524]
+ 1  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(+0x356f5) [0x7ffff7e706f5]
+ 2  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(+0x359ce) [0x7ffff7e709ce]
+ 3  /lib64/libc.so.6(+0x3ebf0) [0x7ffff643ebf0]
+ 4  /opt/spack/opt/spack/linux-zen3/hpl-2.3-7neuxucxckfvf6bfhushbzyzgyz5owfa/bin/xhpl(+0x5088) [0x555555559088]
+=================================
+==== backtrace (tid:1153917) ====
+ 0  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(ucs_handle_error+0x294) [0x7ffff7e70524]
+ 1  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(+0x356f5) [0x7ffff7e706f5]
+ 2  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(+0x359ce) [0x7ffff7e709ce]
+ 3  /lib64/libc.so.6(+0x3ebf0) [0x7ffff643ebf0]
+ 4  /opt/spack/opt/spack/linux-zen3/hpl-2.3-7neuxucxckfvf6bfhushbzyzgyz5owfa/bin/xhpl(+0x5088) [0x555555559088]
+=================================
+==== backtrace (tid:1153927) ====
+ 0  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(ucs_handle_error+0x294) [0x7ffff7e70524]
+ 1  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(+0x356f5) [0x7ffff7e706f5]
+ 2  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(+0x359ce) [0x7ffff7e709ce]
+ 3  /lib64/libc.so.6(+0x3ebf0) [0x7ffff643ebf0]
+ 4  /opt/spack/opt/spack/linux-zen3/hpl-2.3-7neuxucxckfvf6bfhushbzyzgyz5owfa/bin/xhpl(+0x5088) [0x555555559088]
+=================================
+==== backtrace (tid:1153922) ====
+ 0  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(ucs_handle_error+0x294) [0x7ffff7e70524]
+ 1  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(+0x356f5) [0x7ffff7e706f5]
+ 2  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(+0x359ce) [0x7ffff7e709ce]
+ 3  /lib64/libc.so.6(+0x3ebf0) [0x7ffff643ebf0]
+ 4  /opt/spack/opt/spack/linux-zen3/hpl-2.3-7neuxucxckfvf6bfhushbzyzgyz5owfa/bin/xhpl(+0x5088) [0x555555559088]
+=================================
+==== backtrace (tid:1153924) ====
+ 0  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(ucs_handle_error+0x294) [0x7ffff7e70524]
+ 1  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(+0x356f5) [0x7ffff7e706f5]
+ 2  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(+0x359ce) [0x7ffff7e709ce]
+ 3  /lib64/libc.so.6(+0x3ebf0) [0x7ffff643ebf0]
+ 4  /opt/spack/opt/spack/linux-zen3/hpl-2.3-7neuxucxckfvf6bfhushbzyzgyz5owfa/bin/xhpl(+0x5088) [0x555555559088]
+=================================
+==== backtrace (tid:1153894) ====
+ 0  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(ucs_handle_error+0x294) [0x7ffff7e70524]
+ 1  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(+0x356f5) [0x7ffff7e706f5]
+ 2  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(+0x359ce) [0x7ffff7e709ce]
+ 3  /lib64/libc.so.6(+0x3ebf0) [0x7ffff643ebf0]
+ 4  /opt/spack/opt/spack/linux-zen3/hpl-2.3-7neuxucxckfvf6bfhushbzyzgyz5owfa/bin/xhpl(+0x5088) [0x555555559088]
+=================================
+==== backtrace (tid:1153928) ====
+ 0  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(ucs_handle_error+0x294) [0x7ffff7e70524]
+ 1  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(+0x356f5) [0x7ffff7e706f5]
+ 2  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(+0x359ce) [0x7ffff7e709ce]
+ 3  /lib64/libc.so.6(+0x3ebf0) [0x7ffff643ebf0]
+ 4  /opt/spack/opt/spack/linux-zen3/hpl-2.3-7neuxucxckfvf6bfhushbzyzgyz5owfa/bin/xhpl(+0x5088) [0x555555559088]
+=================================
+==== backtrace (tid:1153921) ====
+ 0  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(ucs_handle_error+0x294) [0x7ffff7e70524]
+ 1  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(+0x356f5) [0x7ffff7e706f5]
+ 2  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(+0x359ce) [0x7ffff7e709ce]
+ 3  /lib64/libc.so.6(+0x3ebf0) [0x7ffff643ebf0]
+ 4  /opt/spack/opt/spack/linux-zen3/hpl-2.3-7neuxucxckfvf6bfhushbzyzgyz5owfa/bin/xhpl(+0x5088) [0x555555559088]
+=================================
+==== backtrace (tid:1153948) ====
+ 0  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(ucs_handle_error+0x294) [0x7ffff7e70524]
+ 1  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(+0x356f5) [0x7ffff7e706f5]
+ 2  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(+0x359ce) [0x7ffff7e709ce]
+ 3  /lib64/libc.so.6(+0x3ebf0) [0x7ffff643ebf0]
+ 4  /opt/spack/opt/spack/linux-zen3/hpl-2.3-7neuxucxckfvf6bfhushbzyzgyz5owfa/bin/xhpl(+0x5088) [0x555555559088]
+=================================
+==== backtrace (tid:1153925) ====
+ 0  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(ucs_handle_error+0x294) [0x7ffff7e70524]
+ 1  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(+0x356f5) [0x7ffff7e706f5]
+ 2  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(+0x359ce) [0x7ffff7e709ce]
+ 3  /lib64/libc.so.6(+0x3ebf0) [0x7ffff643ebf0]
+ 4  /opt/spack/opt/spack/linux-zen3/hpl-2.3-7neuxucxckfvf6bfhushbzyzgyz5owfa/bin/xhpl(+0x5088) [0x555555559088]
+=================================
+==== backtrace (tid:1153950) ====
+ 0  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(ucs_handle_error+0x294) [0x7ffff7e70524]
+ 1  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(+0x356f5) [0x7ffff7e706f5]
+ 2  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(+0x359ce) [0x7ffff7e709ce]
+ 3  /lib64/libc.so.6(+0x3ebf0) [0x7ffff643ebf0]
+ 4  /opt/spack/opt/spack/linux-zen3/hpl-2.3-7neuxucxckfvf6bfhushbzyzgyz5owfa/bin/xhpl(+0x5088) [0x555555559088]
+=================================
+==== backtrace (tid:1153899) ====
+ 0  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(ucs_handle_error+0x294) [0x7ffff7e70524]
+ 1  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(+0x356f5) [0x7ffff7e706f5]
+ 2  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(+0x359ce) [0x7ffff7e709ce]
+ 3  /lib64/libc.so.6(+0x3ebf0) [0x7ffff643ebf0]
+ 4  /opt/spack/opt/spack/linux-zen3/hpl-2.3-7neuxucxckfvf6bfhushbzyzgyz5owfa/bin/xhpl(+0x5088) [0x555555559088]
+=================================
+==== backtrace (tid:1153902) ====
+ 0  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(ucs_handle_error+0x294) [0x7ffff7e70524]
+ 1  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(+0x356f5) [0x7ffff7e706f5]
+ 2  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(+0x359ce) [0x7ffff7e709ce]
+ 3  /lib64/libc.so.6(+0x3ebf0) [0x7ffff643ebf0]
+ 4  /opt/spack/opt/spack/linux-zen3/hpl-2.3-7neuxucxckfvf6bfhushbzyzgyz5owfa/bin/xhpl(+0x5088) [0x555555559088]
+=================================
+==== backtrace (tid:1153916) ====
+ 0  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(ucs_handle_error+0x294) [0x7ffff7e70524]
+ 1  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(+0x356f5) [0x7ffff7e706f5]
+ 2  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(+0x359ce) [0x7ffff7e709ce]
+ 3  /lib64/libc.so.6(+0x3ebf0) [0x7ffff643ebf0]
+ 4  /opt/spack/opt/spack/linux-zen3/hpl-2.3-7neuxucxckfvf6bfhushbzyzgyz5owfa/bin/xhpl(+0x5088) [0x555555559088]
+=================================
+==== backtrace (tid:1153892) ====
+ 0  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(ucs_handle_error+0x294) [0x7ffff7e70524]
+ 1  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(+0x356f5) [0x7ffff7e706f5]
+ 2  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(+0x359ce) [0x7ffff7e709ce]
+ 3  /lib64/libc.so.6(+0x3ebf0) [0x7ffff643ebf0]
+ 4  /opt/spack/opt/spack/linux-zen3/hpl-2.3-7neuxucxckfvf6bfhushbzyzgyz5owfa/bin/xhpl(+0x5088) [0x555555559088]
+=================================
+==== backtrace (tid:1153923) ====
+ 0  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(ucs_handle_error+0x294) [0x7ffff7e70524]
+ 1  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(+0x356f5) [0x7ffff7e706f5]
+ 2  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(+0x359ce) [0x7ffff7e709ce]
+ 3  /lib64/libc.so.6(+0x3ebf0) [0x7ffff643ebf0]
+ 4  /opt/spack/opt/spack/linux-zen3/hpl-2.3-7neuxucxckfvf6bfhushbzyzgyz5owfa/bin/xhpl(+0x5088) [0x555555559088]
+=================================
+==== backtrace (tid:1153947) ====
+ 0  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(ucs_handle_error+0x294) [0x7ffff7e70524]
+ 1  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(+0x356f5) [0x7ffff7e706f5]
+ 2  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(+0x359ce) [0x7ffff7e709ce]
+ 3  /lib64/libc.so.6(+0x3ebf0) [0x7ffff643ebf0]
+ 4  /opt/spack/opt/spack/linux-zen3/hpl-2.3-7neuxucxckfvf6bfhushbzyzgyz5owfa/bin/xhpl(+0x5088) [0x555555559088]
+=================================
+==== backtrace (tid:1153920) ====
+ 0  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(ucs_handle_error+0x294) [0x7ffff7e70524]
+ 1  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(+0x356f5) [0x7ffff7e706f5]
+ 2  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(+0x359ce) [0x7ffff7e709ce]
+ 3  /lib64/libc.so.6(+0x3ebf0) [0x7ffff643ebf0]
+ 4  /opt/spack/opt/spack/linux-zen3/hpl-2.3-7neuxucxckfvf6bfhushbzyzgyz5owfa/bin/xhpl(+0x5088) [0x555555559088]
+=================================
+==== backtrace (tid:1153915) ====
+ 0  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(ucs_handle_error+0x294) [0x7ffff7e70524]
+ 1  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(+0x356f5) [0x7ffff7e706f5]
+ 2  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(+0x359ce) [0x7ffff7e709ce]
+ 3  /lib64/libc.so.6(+0x3ebf0) [0x7ffff643ebf0]
+ 4  /opt/spack/opt/spack/linux-zen3/hpl-2.3-7neuxucxckfvf6bfhushbzyzgyz5owfa/bin/xhpl(+0x5088) [0x555555559088]
+=================================
+==== backtrace (tid:1153918) ====
+ 0  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(ucs_handle_error+0x294) [0x7ffff7e70524]
+ 1  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(+0x356f5) [0x7ffff7e706f5]
+ 2  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(+0x359ce) [0x7ffff7e709ce]
+ 3  /lib64/libc.so.6(+0x3ebf0) [0x7ffff643ebf0]
+ 4  /opt/spack/opt/spack/linux-zen3/hpl-2.3-7neuxucxckfvf6bfhushbzyzgyz5owfa/bin/xhpl(+0x5088) [0x555555559088]
+=================================
+==== backtrace (tid:1153890) ====
+ 0  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(ucs_handle_error+0x294) [0x7ffff7e70524]
+ 1  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(+0x356f5) [0x7ffff7e706f5]
+ 2  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(+0x359ce) [0x7ffff7e709ce]
+ 3  /lib64/libc.so.6(+0x3ebf0) [0x7ffff643ebf0]
+ 4  /opt/spack/opt/spack/linux-zen3/hpl-2.3-7neuxucxckfvf6bfhushbzyzgyz5owfa/bin/xhpl(+0x5088) [0x555555559088]
+=================================
+==== backtrace (tid:1153893) ====
+ 0  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(ucs_handle_error+0x294) [0x7ffff7e70524]
+ 1  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(+0x356f5) [0x7ffff7e706f5]
+ 2  /opt/spack/opt/spack/linux-zen3/ucx-1.19.0-fxx5xxk2v4odtyzp4j4djlihvzp7eywd/lib/libucs.so.0(+0x359ce) [0x7ffff7e709ce]
+ 3  /lib64/libc.so.6(+0x3ebf0) [0x7ffff643ebf0]
+ 4  /opt/spack/opt/spack/linux-zen3/hpl-2.3-7neuxucxckfvf6bfhushbzyzgyz5owfa/bin/xhpl(+0x5088) [0x555555559088]
+=================================
+[anu-hpc-2025-worker-node-1:00000] *** An error occurred in Socket closed
+[anu-hpc-2025-worker-node-1:00000] *** reported by process [1873739777,0]
+[anu-hpc-2025-worker-node-1:00000] *** on a NULL communicator
+[anu-hpc-2025-worker-node-1:00000] *** Unknown error
+[anu-hpc-2025-worker-node-1:00000] *** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+[anu-hpc-2025-worker-node-1:00000] ***    and MPI will try to terminate your MPI job as well)
+--------------------------------------------------------------------------
+prterun noticed that process rank 7 with PID 1153894 on node anu-hpc-2025-worker-node-1 exited on
+signal 11 (Segmentation fault).
+--------------------------------------------------------------------------
+ 
