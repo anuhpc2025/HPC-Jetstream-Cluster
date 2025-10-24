@@ -56,5 +56,11 @@ ulimit -n 65536
 # Flush any pending writes
 sync
 
+# Drop caches
+echo 3 | sudo tee /proc/sys/vm/drop_caches >/dev/null
+
+# Forces memory compaction
+echo 1 > /proc/sys/vm/compact_memory
+
 # Run the MPI program
 mpirun $(spack location -i hpl)/bin/xhpl
