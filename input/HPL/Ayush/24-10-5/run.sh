@@ -35,21 +35,18 @@ export OMPI_MCA_orte_launch=slurm
 
 # Thread binding and OpenMP
 export OMP_NUM_THREADS=1
-export BLIS_NUM_THREADS=1           
-export OMP_PROC_BIND=true
+export OMP_PROC_BIND=close
 export OMP_PLACES=cores
-export OMP_MAX_ACTIVE_LEVELS=1     
 
 # amdblis (BLAS layer) optimizations
 export BLIS_ENABLE_OPENMP=1
-export BLIS_ARCH_TYPE=zen3
 export BLIS_CPU_EXT=ZEN3        
 export BLIS_DYNAMIC_SCHED=0
 export BLIS_JC_NT=1  # (No outer loop parallelization)
 export BLIS_IC_NT=$OMP_NUM_THREADS # (# of 2nd level threads – one per core in the shared L3 cache domain):
 export BLIS_JR_NT=1 # (No 4th level threads)
 export BLIS_IR_NT=1 # (No 5th level threads)
-
+export BLIS_NUM_THREADS=1
 
 export OMPI_MCA_hwloc_base_binding_policy=core
 export OMPI_MCA_hwloc_base_use_hwthreads_as_cpus=0
