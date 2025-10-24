@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-10-24T00:51:56.879Z",
+  "generatedAt": "2025-10-24T01:12:29.914Z",
   "runs": [
     {
       "id": "HPL/Daniel/17-10-1",
@@ -1117,7 +1117,12 @@
       "group": "Sithum",
       "run": "10-24 - 1 0",
       "best": null,
-      "outSummary": null,
+      "outSummary": {
+        "testsTotal": null,
+        "testsPassed": null,
+        "testsFailed": null,
+        "testsSkipped": null
+      },
       "hasErr": true
     },
     {
@@ -1126,7 +1131,12 @@
       "group": "Sithum",
       "run": "10-24 - 1 1",
       "best": null,
-      "outSummary": null,
+      "outSummary": {
+        "testsTotal": null,
+        "testsPassed": null,
+        "testsFailed": null,
+        "testsSkipped": null
+      },
       "hasErr": true
     }
   ]
