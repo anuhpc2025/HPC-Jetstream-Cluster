@@ -18,35 +18,38 @@ spack load hpl %aocc
 
 unset OMPI_MCA_osc
 
-# MPI settings (Ethernet)
+# --- MPI transports (Ethernet) ---
 export OMPI_MCA_btl=self,vader,tcp
-export OMPI_MCA_btl_tcp_if_include=eth0
-export OMPI_MCA_oob_tcp_if_include=eth0
-export OMPI_MCA_pml=ob1
+NETDEV=$(ip route get 1.1.1.1 | awk '{for(i=1;i<=NF;i++) if($i=="dev") {print $(i+1); exit}}')
+export OMPI_MCA_btl_tcp_if_include="$NETDEV"
+export OMPI_MCA_oob_tcp_if_include="$NETDEV"
+export OMPI_MCA_pml=ob1         
 
-# Collective tuning
+# --- Open MPI tuned collectives ---
 export OMPI_MCA_coll_tuned_use_dynamic_rules=1
-export OMPI_MCA_coll_tuned_bcast_algorithm=4
-export OMPI_MCA_coll_tuned_allreduce_algorithm=6
+export OMPI_MCA_coll_tuned_bcast_algorithm=1   
+unset  OMPI_MCA_coll_tuned_allreduce_algorithm 
 
-# SLURM Integration
+# --- Slurm integration ---
 export OMPI_MCA_plm=slurm
-export OMPI_MCA_orte_launch=slurm
+unset OMPI_MCA_orte_launch
 
 # Thread binding and OpenMP
 export OMP_NUM_THREADS=1
 export OMP_PROC_BIND=close
 export OMP_PLACES=cores
 
-# amdblis (BLAS layer) optimizations
-export BLIS_ENABLE_OPENMP=1
-export BLIS_CPU_EXT=ZEN3        
-export BLIS_DYNAMIC_SCHED=0
-export BLIS_JC_NT=1  # (No outer loop parallelization)
-export BLIS_IC_NT=$OMP_NUM_THREADS # (# of 2nd level threads – one per core in the shared L3 cache domain):
-export BLIS_JR_NT=1 # (No 4th level threads)
-export BLIS_IR_NT=1 # (No 5th level threads)
-export BLIS_NUM_THREADS=1
+# --- OpenMP / AOCL-BLIS (single-threaded BLAS) ---
+export OMP_NUM_THREADS=1
+export OMP_PROC_BIND=close
+export OMP_PLACES=cores
+export OMP_MAX_ACTIVE_LEVELS=1
+
+
+export BLIS_ARCH_TYPE=zen3        
+export BLIS_ARCH_DEBUG=1          
+export BLIS_NUM_THREADS=1        
+unset  BLIS_JC_NT BLIS_IC_NT BLIS_JR_NT BLIS_IR_NT  
 
 export OMPI_MCA_hwloc_base_binding_policy=core
 export OMPI_MCA_hwloc_base_use_hwthreads_as_cpus=0
@@ -59,4 +62,5 @@ ulimit -n 65536
 sync
 
 # Run the MPI program
-mpirun $(spack location -i hpl)/bin/xhpl
+mpirun --bind-to core --map-by ppr:64:node:pe=1 --report-bindings \
+  $(spack location -i hpl)/bin/xhpl
