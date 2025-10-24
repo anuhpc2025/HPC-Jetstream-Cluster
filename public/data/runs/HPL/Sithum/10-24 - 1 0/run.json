@@ -82,7 +82,7 @@
   },
   "job": {
     "filename": "run.sh",
-    "raw": "#!/bin/bash\n#SBATCH --job-name=hpl-test       # Job name\n#SBATCH --ntasks=256              # Total MPI tasks\n#SBATCH --ntasks-per-node=64       # MPI tasks per node\n#SBATCH --cpus-per-task=1         # CPU cores per MPI task\n#SBATCH --time=24:00:00           # Time limit hh:mm:ss\n#SBATCH --nodes=4                 # Number of nodes\n\nexport SPACK_ROOT=/opt/spack\nsource ${SPACK_ROOT}/share/spack/setup-env.sh\n\nspack load openmpi\nspack load hpl %aocc\n\nunset OMPI_MCA_osc\n\nexport PATH=/opt/openmpi-4.1.6/bin:$PATH\nexport LD_LIBRARY_PATH=/opt/openmpi-4.1.6/lib:$LD_LIBRARY_PATH\n\n# MPI settings (Ethernet)\nexport OMPI_MCA_btl=self,vader,tcp\nexport OMPI_MCA_btl_tcp_if_include=enp1s0\nexport OMPI_MCA_oob_tcp_if_include=enp1s0\nexport OMPI_MCA_pml=ob1\n\n# Collective tuning\nexport OMPI_MCA_coll_tuned_use_dynamic_rules=1\nexport OMPI_MCA_coll_tuned_bcast_algorithm=4\nexport OMPI_MCA_coll_tuned_allreduce_algorithm=6\n\n# SLURM Integration\nexport OMPI_MCA_plm=slurm\nexport OMPI_MCA_orte_launch=slurm\n\n# Thread binding and OpenMP\nexport OMP_NUM_THREADS=1\nexport OMP_PROC_BIND=close\nexport OMP_PLACES=cores\n\n# Memory and file limits\nulimit -l unlimited\nulimit -n 65536\n\n# Flush any pending writes\nsync\n\n# Drop caches\necho 3 | sudo tee /proc/sys/vm/drop_caches >/dev/null\n\n# Forces memory compaction\necho 1 > /proc/sys/vm/compact_memory\n\n# Run the MPI program\nmpirun Xhpl",
+    "raw": "#!/bin/bash\n#SBATCH --job-name=hpl-test       # Job name\n#SBATCH --ntasks=256              # Total MPI tasks\n#SBATCH --ntasks-per-node=64       # MPI tasks per node\n#SBATCH --cpus-per-task=1         # CPU cores per MPI task\n#SBATCH --time=24:00:00           # Time limit hh:mm:ss\n#SBATCH --nodes=4                 # Number of nodes\n\nexport SPACK_ROOT=/opt/spack\nsource ${SPACK_ROOT}/share/spack/setup-env.sh\n\n# Load OpenMPI explicitly by hash\nspack load /buou2hh\nspack load hpl %aocc\n\nunset OMPI_MCA_osc\n\n# MPI settings (Ethernet)\nexport OMPI_MCA_btl=self,vader,tcp\nexport OMPI_MCA_btl_tcp_if_include=enp1s0\nexport OMPI_MCA_oob_tcp_if_include=enp1s0\nexport OMPI_MCA_pml=ob1\n\n# Collective tuning\nexport OMPI_MCA_coll_tuned_use_dynamic_rules=1\nexport OMPI_MCA_coll_tuned_bcast_algorithm=4\nexport OMPI_MCA_coll_tuned_allreduce_algorithm=6\n\n# SLURM Integration\nexport OMPI_MCA_plm=slurm\nexport OMPI_MCA_orte_launch=slurm\n\n# Thread binding and OpenMP\nexport OMP_NUM_THREADS=1\nexport OMP_PROC_BIND=close\nexport OMP_PLACES=cores\n\n# Memory and file limits\nulimit -l unlimited\nulimit -n 65536\n\n# Flush any pending writes\nsync\n\n# Drop caches\necho 3 | sudo tee /proc/sys/vm/drop_caches >/dev/null\n\n# Forces memory compaction\necho 1 > /proc/sys/vm/compact_memory\n\n# Run the MPI program\nmpirun Xhpl",
     "sbatch": {
       "job-name": "hpl-test       # Job name",
       "ntasks": null,
@@ -95,8 +95,8 @@
   },
   "out": null,
   "err": {
-    "path": "/raw/HPL/Sithum/10-24 - 1 0/run.sh-27.err",
-    "size": 782
+    "path": "/raw/HPL/Sithum/10-24 - 1 0/run.sh-29.err",
+    "size": 409
   },
   "best": null
 }
