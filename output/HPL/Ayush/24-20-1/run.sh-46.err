@@ -1,0 +1,3 @@
+sudo: you do not exist in the passwd database
+/var/spool/slurmd/job00046/slurm_script: line 59: /proc/sys/vm/compact_memory: Permission denied
+/var/spool/slurmd/job00046/slurm_script: line 62: mpirun: command not found
