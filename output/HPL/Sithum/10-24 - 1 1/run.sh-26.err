@@ -1,0 +1,4 @@
+/var/spool/slurmd/job00026/slurm_script: line 9: spack: command not found
+sudo: you do not exist in the passwd database
+/var/spool/slurmd/job00026/slurm_script: line 53: /proc/sys/vm/compact_memory: Permission denied
+/var/spool/slurmd/job00026/slurm_script: line 56: mpirun: command not found
