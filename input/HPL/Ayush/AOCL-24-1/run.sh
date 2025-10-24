@@ -3,9 +3,9 @@
 #SBATCH --ntasks=256              # Total MPI tasks
 #SBATCH --ntasks-per-node=64       # MPI tasks per node
 #SBATCH --cpus-per-task=1         # CPU cores per MPI task
-#SBATCH --time=12:00:00           # Time limit hh:mm:ss
+#SBATCH --time=24:00:00           # Time limit hh:mm:ss
 #SBATCH --nodes=4                 # Number of nodes
-#SBATCH --nodelist=node1,node2,node3,node4    # nodes 1 and 2 are the only ones with hpcx for now
+
 
 # Load MPI module (adjust for your system)
 # module load openmpi
