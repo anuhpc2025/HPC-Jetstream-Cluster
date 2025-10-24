@@ -20,8 +20,8 @@ unset OMPI_MCA_osc
 
 # MPI settings (Ethernet)
 export OMPI_MCA_btl=self,vader,tcp
-export OMPI_MCA_btl_tcp_if_include=enp1s0
-export OMPI_MCA_oob_tcp_if_include=enp1s0
+export OMPI_MCA_btl_tcp_if_include=eth0
+export OMPI_MCA_oob_tcp_if_include=eth0
 export OMPI_MCA_pml=ob1
 
 # Collective tuning
@@ -37,6 +37,12 @@ export OMPI_MCA_orte_launch=slurm
 export OMP_NUM_THREADS=1
 export OMP_PROC_BIND=close
 export OMP_PLACES=cores
+
+# amdblis (BLAS layer) optimizations
+export BLIS_JC_NT=1  # (No outer loop parallelization)
+export BLIS_IC_NT=$OMP_NUM_THREADS # (# of 2nd level threads – one per core in the shared L3 cache domain):
+export BLIS_JR_NT=1 # (No 4th level threads)
+export BLIS_IR_NT=1 # (No 5th level threads)
 
 # Memory and file limits
 ulimit -l unlimited
