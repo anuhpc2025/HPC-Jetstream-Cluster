@@ -14,7 +14,7 @@ source ${SPACK_ROOT}/share/spack/setup-env.sh
 
 # Load OpenMPI explicitly by hash
 spack load /buou2hh
-export LD_LIBRARY_PATH=$(spack find --paths -l openmpi | awk '{print $NF "/lib"}'):$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/opt/spack/opt/spack/linux-zen3/openmpi-5.0.8-6hi2ymzi7jy344ruvf5ew3kgoadai5v4/lib:$LD_LIBRARY_PATH
 
 unset OMPI_MCA_osc
 
