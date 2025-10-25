@@ -5,7 +5,6 @@
 #SBATCH --cpus-per-task=1         # CPU cores per MPI task
 #SBATCH --time=24:00:00           # Time limit hh:mm:ss
 #SBATCH --nodes=4                 # Number of nodes
-#SBATCH --mem-per-node=240G 
 
 export SPACK_USER_CONFIG_PATH=/tmp/spack-config
 export SPACK_USER_CACHE_PATH=/tmp/spack-cache
