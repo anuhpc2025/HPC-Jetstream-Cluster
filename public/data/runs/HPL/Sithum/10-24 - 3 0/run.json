@@ -117,10 +117,7 @@
       "testsSkipped": 0
     }
   },
-  "err": {
-    "path": "/raw/HPL/Sithum/10-24 - 3 0/run.sh-39.err",
-    "size": 143
-  },
+  "err": null,
   "best": {
     "gflops": 5602.1,
     "N": 300000,
