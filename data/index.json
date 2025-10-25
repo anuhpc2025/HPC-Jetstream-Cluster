@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-10-25T03:58:55.782Z",
+  "generatedAt": "2025-10-25T04:01:47.620Z",
   "runs": [
     {
       "id": "HPL/Ayush/24-10-2",
@@ -119,6 +119,20 @@
       "suite": "HPL",
       "group": "Ayush",
       "run": "25-10-7",
+      "best": null,
+      "outSummary": {
+        "testsTotal": null,
+        "testsPassed": null,
+        "testsFailed": null,
+        "testsSkipped": null
+      },
+      "hasErr": true
+    },
+    {
+      "id": "HPL/Ayush/25-10-8",
+      "suite": "HPL",
+      "group": "Ayush",
+      "run": "25-10-8",
       "best": null,
       "outSummary": {
         "testsTotal": null,
