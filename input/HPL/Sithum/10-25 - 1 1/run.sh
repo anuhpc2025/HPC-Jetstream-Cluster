@@ -14,7 +14,6 @@ source ${SPACK_ROOT}/share/spack/setup-env.sh
 
 # Load OpenMPI explicitly by hash
 spack load /buou2hh
-spack load hpl %aocc
 
 unset OMPI_MCA_osc
 
@@ -23,8 +22,8 @@ export LD_LIBRARY_PATH=/opt/openmpi-4.1.6/lib:$LD_LIBRARY_PATH
 
 # MPI settings (Ethernet)
 export OMPI_MCA_btl=self,vader,tcp
-export OMPI_MCA_btl_tcp_if_include=enp1s0
-export OMPI_MCA_oob_tcp_if_include=enp1s0
+export OMPI_MCA_btl_tcp_if_include=eth0
+export OMPI_MCA_oob_tcp_if_include=eth0
 export OMPI_MCA_pml=ob1
 
 # Collective tuning
@@ -60,4 +59,4 @@ ulimit -n 65536
 sync
 
 # Run the MPI program
-mpirun $(spack location -i hpl)/bin/xhpl
+mpirun ./xhpl
