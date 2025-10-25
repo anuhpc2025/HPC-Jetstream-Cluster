@@ -3,7 +3,7 @@
 #SBATCH --ntasks=256              # Total MPI tasks
 #SBATCH --ntasks-per-node=64       # MPI tasks per node
 #SBATCH --cpus-per-task=1         # CPU cores per MPI task
-#SBATCH --time=24:00:00           # Time limit hh:mm:ss
+#SBATCH --time=01:30:00           # Time limit hh:mm:ss
 #SBATCH --nodes=4                 # Number of nodes
 
 export SPACK_USER_CONFIG_PATH=/tmp/spack-config
@@ -15,11 +15,6 @@ source ${SPACK_ROOT}/share/spack/setup-env.sh
 # Load OpenMPI explicitly by hash
 spack load /buou2hh
 spack load hpl %aocc
-
-unset OMPI_MCA_osc
-
-export PATH=/opt/openmpi-4.1.6/bin:$PATH
-export LD_LIBRARY_PATH=/opt/openmpi-4.1.6/lib:$LD_LIBRARY_PATH
 
 # MPI settings (Ethernet)
 export OMPI_MCA_btl=self,vader,tcp
@@ -56,9 +51,5 @@ export OMPI_MCA_hwloc_base_use_hwthreads_as_cpus=0
 ulimit -l unlimited
 ulimit -n 65536
 
-# Flush any pending writes
-sync
-
-
 # Run the MPI program
-mpirun ./xhpl
+mpirun $(spack location -i hpl)/bin/xhpl

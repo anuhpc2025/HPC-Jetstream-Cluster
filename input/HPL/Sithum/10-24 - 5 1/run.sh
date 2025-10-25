@@ -60,4 +60,4 @@ ulimit -n 65536
 sync
 
 # Run the MPI program
-mpirun ./xhpl
+mpirun $(spack location -i hpl)/bin/xhpl
