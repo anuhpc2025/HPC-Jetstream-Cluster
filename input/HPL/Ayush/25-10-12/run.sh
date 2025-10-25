@@ -57,3 +57,4 @@ sync
 # Run the MPI program
 mpirun --bind-to core --map-by ppr:32:node:pe=1 --report-bindings \
   $(spack location -i hpl)/bin/xhpl
+  
