@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-10-25T07:58:27.417Z",
+  "generatedAt": "2025-10-25T10:52:44.665Z",
   "runs": [
     {
       "id": "HPL/Ayush/24-10-2",
@@ -110,6 +110,25 @@
         "N": 329088,
         "NB": 384,
         "timeSec": 4250.24
+      },
+      "outSummary": {
+        "testsTotal": 1,
+        "testsPassed": 1,
+        "testsFailed": 0,
+        "testsSkipped": 0
+      },
+      "hasErr": true
+    },
+    {
+      "id": "HPL/Ayush/25-10-12",
+      "suite": "HPL",
+      "group": "Ayush",
+      "run": "25-10-12",
+      "best": {
+        "gflops": 4048.8,
+        "N": 329280,
+        "NB": 240,
+        "timeSec": 5878.72
       },
       "outSummary": {
         "testsTotal": 1,
@@ -1563,6 +1582,25 @@
       "run": "10-25 - 4 1",
       "best": null,
       "outSummary": null,
+      "hasErr": false
+    },
+    {
+      "id": "HPL/Sithum/10-25 - 5 1",
+      "suite": "HPL",
+      "group": "Sithum",
+      "run": "10-25 - 5 1",
+      "best": {
+        "gflops": 6209.6,
+        "N": 340000,
+        "NB": 384,
+        "timeSec": 4219.76
+      },
+      "outSummary": {
+        "testsTotal": 1,
+        "testsPassed": 1,
+        "testsFailed": 0,
+        "testsSkipped": 0
+      },
       "hasErr": false
     }
   ]
