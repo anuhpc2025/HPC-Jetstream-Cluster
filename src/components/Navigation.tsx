@@ -61,10 +61,10 @@ export const Navigation: React.FC<NavigationProps> = ({ activeSuite }) => {
                         </div>
                         <div>
                             <h1 className="text-xl font-bold text-gray-900">
-                                HPC Xenon Cluster Leaderboard Website
+                                HPC Jetstream Cluster Leaderboard Website
                             </h1>
                             <p className="text-sm text-gray-600">
-                                https://github.com/anuhpc2025/HPC-Xenon-Cluster
+                                https://github.com/anuhpc2025/HPC-Jetstream-Cluster
                             </p>
                         </div>
                     </div>
